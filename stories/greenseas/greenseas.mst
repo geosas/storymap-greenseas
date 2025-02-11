@@ -1,0 +1,114 @@
+{{#id}}
+<div class="container-fluid slideItem_{{type}} slide__item mt-4" id="slide_{{id}}" item-type="{{type}}" item-corpus="{{corpus_code}}">
+    <button id="btn__homeStory" onclick="$('.carousel').carousel(0);">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13 19H19V9.97815L12 4.53371L5 9.97815V19H11V13H13V19ZM21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20Z"></path></svg>
+    </button>
+    <div class="template__data corpus_{{corpus_code}}">
+        <span class="item__badge">{{corpus}}</span>
+        <h2 class="my-3">{{name}}</h2>     
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+   
+    </div> 
+    <div class="template__corpus">
+        <h2>{{name}}</h2>        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+    </div>  
+    <div class="template__intro">
+        <h2>Chapitre 1 : Comment les "marées vertes" sont-elles documentées ?</h2>       
+        <h5>Introduction générale</h5> 
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+        <div class="d-flex">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Photographies aériennes du littoral</h5>
+                    <a type="button" onclick="$('.carousel').carousel(4);" class="card-link">Consulter</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Etudes et expertises scientifiques</h5>
+                    <a type="button" onclick="$('.carousel').carousel(1);" class="card-link">Consulter</a>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+<style>
+
+
+
+</style>
+<script>
+// Timeline param
+startTimeline = 1945 - 1;
+endTimeline = 2035 + 1;
+numberYears = endTimeline-startTimeline;
+
+// Create timeline
+if (document.getElementById('customTimeline') === null){
+    function createYear(year) {         
+        if (year % 10) {
+            htmlYears += "<div class='timeline__year' data-years=" + year + "><span>" + year + "</span><div class='timelineItems_list'></div></div>";
+        } else {
+            htmlYears += "<div class='timeline__year border' data-years=" + year + "><span>" + year + "</span><div class='timelineItems_list'></div></div>";
+        }
+    }
+    let timelineHtml = `<div class="timeline__block" id="customTimeline" item-type="intro" item-corpus="all"></div>`
+    document.getElementById("template").insertAdjacentHTML("afterend",timelineHtml);
+    let htmlYears = "";    
+    let i = 1 
+    let years=[];
+    while (i < numberYears) {        
+        years.push(startTimeline + i);
+        i = i + 1 
+    }
+    years.forEach(createYear);
+    document.getElementById("customTimeline").innerHTML = htmlYears;    
+}
+
+// Create point for data
+function addDate(date) {
+    div = document.querySelector("#customTimeline .timeline__year[data-years='" + date + "'] .timelineItems_list");
+    div.innerHTML += "<div class='timeline__item time__{{corpus_code}}' id='timelineItem__{{id}}'><div class='timeline__itemPoint' ><div class='timeline__itemHover'>{{name}}</div></div></div>";
+};    
+
+// Create bar for corpus
+function addPeriode(start,end) {
+    const timelineWidth = document.querySelector("#customTimeline").offsetWidth;
+    let yearsPeriode = end - start +1;
+    let sizeBar= (timelineWidth/numberYears) * yearsPeriode;
+    let sizeBarPerc = sizeBar*100/timelineWidth;
+    div = document.querySelector("#customTimeline .timeline__year[data-years='" + start + "'] .timelineItems_list");
+    div.innerHTML += "<div class='timeline__item time__{{corpus_code}}' id='timelineItem__{{id}}'><div class='timeline__itemPeriode' style='width:" + sizeBarPerc + "%!important'><div class='timeline__itemHover'>{{name}}</div></div></div>";        
+};
+
+{{#date_end}}
+    addPeriode({{date_start}},{{date_end}});
+{{/date_end}}
+{{^date_end}}
+    {{#date_start}}
+        addDate({{date_start}});
+    {{/date_start}}
+{{/date_end}}
+
+// Event change item 
+$('.carousel').on('slide.bs.carousel', function (e) {
+    // Type of item
+    let currentItemType = e.relatedTarget.firstChild.nextSibling.getAttribute("item-type");
+    let currentItemCorpus = e.relatedTarget.firstChild.nextSibling.getAttribute("item-corpus");
+    let timeline = document.querySelector("#customTimeline");
+    timeline.setAttribute("item-type", currentItemType);
+    timeline.setAttribute("item-corpus", currentItemCorpus);
+    // Add active class to item timeline
+    let timelineActiv = document.querySelector(".timeline__active");
+    if(timelineActiv){
+        timelineActiv.classList.remove("timeline__active");
+    }    
+    if(currentItemType != "intro"){
+        let currentItemId = e.relatedTarget.attributes["data-featureid"].value;
+        let currentItemDate = document.querySelector("#timelineItem__"+ currentItemId +"")
+        currentItemDate.classList.add("timeline__active");
+    }    
+});
+</script>
+{{/id}}

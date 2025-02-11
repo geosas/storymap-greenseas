@@ -1,0 +1,94 @@
+{
+  "theme": {
+    "color" : "#253848",
+    "css":"greenseas.css"
+  },
+  "tooltip": {
+    "fields": [
+      "nom","date_creation"
+    ],
+    "template":"{{name}}"
+  },
+  "map": {
+		"center": [-227028,6182514],
+		"zoom": 15,
+    "width": "100%",
+    "overview": false,
+    "url": "http://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+    "animation": true
+  },
+  "data": {
+    "template": {
+      "name": "carousel",
+      "size": "50%"
+    },
+    "url": "stories/greenseas/greenseas.geojson",
+    "orderby": "id",
+    "fields": [
+      {
+        "name": "id"
+      }
+    ],
+    "id": "id",
+    "tpl": "stories/greenseas/greenseas.mst",
+    "analyse": {
+      "type": "categories",
+      "field": "corpus_map",
+      "values": ["c_01","c_05","none"],
+      "styles": [
+        {
+          "fill": {
+            "color": "rgba(58,143,152,0.4)"
+          },
+          "stroke": {
+            "color": "rgba(58,143,152,0.7)",
+            "width": 0.5
+          },
+          "icon": {
+            "src" : "stories/greenseas/img/icon_map.svg",
+            "scale" : 0.3
+          }
+        },
+        {
+          "fill": {
+            "color": "rgba(134,235,213,0.4)"
+          },
+          "stroke": {
+            "color": "rgba(134,235,213,0.7)",
+            "width": 0.5
+          },
+          "icon": {
+            "src" : "stories/greenseas/img/icon_map2.svg",
+            "scale" : 0.3
+          }
+        },
+        {
+          "fill": {
+            "color": "rgba(37,56,72,0)"
+          },
+          "stroke": {
+            "color": "rgba(37,56,72,0)",
+            "width": 0.5
+          }
+        }
+      ]
+    },
+    "hightlightstyle": {
+      "fill": {
+        "color": "rgba(37,56,72,0.8)"
+      },
+      "icon": {
+        "src" : "stories/greenseas/img/icon_mapSelect.svg",
+        "scale" : 0.35
+      },
+      "stroke": {
+        "color": "rgba(37,56,72,0)",
+        "width": 2
+      }
+    }
+  },
+  "extradata": {
+    "url": "",
+    "linkfield": ""
+  }
+}

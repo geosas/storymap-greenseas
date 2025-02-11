@@ -1,0 +1,228 @@
+{
+    "type": "FeatureCollection",
+    "name": "greenseas",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+    "features": [
+        { "type": "Feature", 
+        "properties": { 
+            "id": 1,
+            "name":"Introduction",
+            "type":"intro",
+            "corpus":"all",
+            "corpus_code":"all",
+            "corpus_map":"none",
+            "date_start":"",
+            "date_end":"" 
+        },
+        "geometry": {
+            "type": "GeometryCollection", 
+                "geometries": [
+                    { "type": "MultiLineString", "coordinates": [ [ [ -567739.059532904764637, 6275271.581878413446248 ], [ -101332.399378726375289, 6268132.704427073709667 ], [ -120369.405915631563403, 5978611.563344974070787 ], [ -575671.145589948631823, 6007167.073150331154466 ] ] ] }
+                ] 
+            } 
+        },
+        { "type": "Feature", 
+        "properties": { 
+            "id": 2,
+            "name":"Etudes et expertises scientifiques",
+            "type":"corpus",
+            "corpus":"Etudes et expertises scientifiques",
+            "corpus_code":"c_05",
+            "corpus_map":"none",
+            "date_start":"1987",
+            "date_end":"2002" 
+        },
+        "geometry": {
+            "type": "GeometryCollection", 
+                "geometries": [
+                    { "type": "MultiLineString", "coordinates": [ [ [ -489013.10541674477281, 6190993.167522321455181 ], [ -493375.752748118888121, 6064079.790609619580209 ], [ -184421.00082626088988, 6019660.108690174296498 ], [ -168160.224409321031999, 6141417.629665797576308 ], [ -486633.479599631624296, 6192579.584733730182052 ], [ -486633.479599631624296, 6192579.584733730182052 ] ] ] }
+                ] 
+            } 
+        },
+        { "type": "Feature", 
+        "properties": { 
+            "id": 3,
+            "name":"Intervention manuscrite de D.Briault 'Les marées Vertes' dans le cadre du colloque Eutrophisation du 25-26 novembre 1987",
+            "type":"data",
+            "corpus":"Etudes et expertises scientifiques",
+            "corpus_code":"c_05",
+            "corpus_map":"c_05",
+            "date_start":"1987",
+            "date_end":"" 
+        },
+        "geometry": {
+            "type": "GeometryCollection", 
+                "geometries": [
+                    { "type": "MultiPolygon", "coordinates": [ [ [ [ -485776.47745677176863, 6126105.352334190160036 ], [ -476738.932941248931456, 6119268.660628151148558 ], [ -483950.237891459022649, 6118238.474206692539155 ], [ -490786.929597502166871, 6122827.486447734758258 ], [ -490505.96966437692754, 6125730.73909002635628 ], [ -485776.47745677176863, 6126105.352334190160036 ] ] ] ] },
+                    { "type": "MultiPoint", "coordinates": [ [ -482779.571503437065985, 6169935.101901707239449 ] ] } 
+                ] 
+            } 
+        },
+        { "type": "Feature", 
+        "properties": { 
+            "id": 4,
+            "name":"Étude du phénomène de 'Marée Verte' affectant les baies de Lannion et de Saint-Brieuc par Joël Kopp en 1977",
+            "type":"data",
+            "corpus":"Etudes et expertises scientifiques",
+            "corpus_code":"c_05",
+            "corpus_map":"c_05",
+            "date_start":"1977",
+            "date_end":"" 
+        },
+        "geometry": {
+            "type": "GeometryCollection", 
+                "geometries": [
+                    { "type": "MultiPolygon", "coordinates": [ [ [ [ -427149.504744675243273, 6085647.121964185498655 ], [ -433892.543139676679857, 6068789.525976682081819 ], [ -449251.686150513589382, 6074596.031261266209185 ], [ -444007.100732179009356, 6095199.759690437465906 ], [ -427149.504744675243273, 6085647.121964185498655 ] ] ] ] },
+                    { "type": "MultiPoint", "coordinates": [ [ -188333.561588370503159, 6128727.645043363794684 ] ] }
+                ] 
+            } 
+        },
+        { "type": "Feature", 
+        "properties": { 
+            "id": 5,
+            "name":"Photographies aériennes du littoral",
+            "type":"corpus",
+            "corpus":"Photographies aériennes du littoral",
+            "corpus_code":"c_01",
+            "corpus_map":"none",
+            "date_start":"1955",
+            "date_end":"1997" 
+        },
+        "geometry": {
+            "type": "GeometryCollection", 
+                "geometries": [
+                    { "type": "MultiLineString", "coordinates": [ [ [ -489013.10541674477281, 6190993.167522321455181 ], [ -493375.752748118888121, 6064079.790609619580209 ], [ -184421.00082626088988, 6019660.108690174296498 ], [ -168160.224409321031999, 6141417.629665797576308 ], [ -486633.479599631624296, 6192579.584733730182052 ], [ -486633.479599631624296, 6192579.584733730182052 ] ] ] }
+                ] 
+            } 
+        },
+        { "type": "Feature", 
+        "properties": { 
+            "id": 6,
+            "name":"Photographie aérienne de la baie de Saint Michel en Grève en mai 1971",
+            "type":"data",
+            "corpus":"Photographies aériennes du littoral",
+            "corpus_code":"c_01",
+            "corpus_map":"c_01",
+            "date_start":"1971",
+            "date_end":"" 
+        },
+        "geometry": {
+            "type": "GeometryCollection", 
+                "geometries": [
+                    { "type": "MultiPolygon", "coordinates": [ [ [ [ -514996.310501778498292, 6199529.548190876841545 ], [ -518555.136321362631861, 6190164.217086710035801 ], [ -537285.798529699910432, 6190164.217086710035801 ], [ -535225.425686783040874, 6199904.161435043439269 ], [ -520615.50916427973425, 6206272.586585879325867 ], [ -514996.310501778498292, 6199529.548190876841545 ] ] ] ] },
+                    { "type": "MultiPoint", "coordinates": [ [ -297720.628885061945766, 6162068.223774204030633 ] ] }
+                ] 
+            } 
+        },
+        { "type": "Feature", 
+        "properties": { 
+            "id": 7,
+            "name":"Photographie aérienne de la baie de La Fresnaye en mai 1966",
+            "type":"data",
+            "corpus":"Photographies aériennes du littoral",
+            "corpus_code":"c_01",
+            "corpus_map":"c_01",
+            "date_start":"1966",
+            "date_end":"" 
+        },
+        "geometry": {
+            "type": "GeometryCollection", 
+                "geometries": [
+                    { "type": "MultiPolygon", "coordinates": [ [ [ [ -407107.696181753301062, 6235117.80638672132045 ], [ -365151.012835077184718, 6256096.14806005731225 ], [ -365151.012835077184718, 6245232.36397922411561 ], [ -389875.486950082704425, 6225377.862038386054337 ], [ -407107.696181753301062, 6235117.80638672132045 ] ] ] ] },
+                    { "type": "MultiPoint", "coordinates": [ [ -371144.824741745193023, 6193535.736284212209284 ] ] }
+                ] 
+            } 
+        },
+        { "type": "Feature", 
+        "properties": { 
+            "id": 8,
+            "name":"Archives de presse, revue",
+            "type":"corpus",
+            "corpus":"Archives de presse, revue",
+            "corpus_code":"c_02",
+            "corpus_map":"none",
+            "date_start":"1969",
+            "date_end":"2010" 
+        },
+        "geometry": {
+            "type": "GeometryCollection", 
+                "geometries": [
+                    { "type": "MultiLineString", "coordinates": [ [ [ -489013.10541674477281, 6190993.167522321455181 ], [ -493375.752748118888121, 6064079.790609619580209 ], [ -184421.00082626088988, 6019660.108690174296498 ], [ -168160.224409321031999, 6141417.629665797576308 ], [ -486633.479599631624296, 6192579.584733730182052 ], [ -486633.479599631624296, 6192579.584733730182052 ] ] ] }
+                ] 
+            } 
+        },
+        { "type": "Feature", 
+        "properties": { 
+            "id": 9,
+            "name":"Archives citoyennes",
+            "type":"corpus",
+            "corpus":"Archives citoyennes",
+            "corpus_code":"c_03",
+            "corpus_map":"none",
+            "date_start":"1974",
+            "date_end":"2021" 
+        },
+        "geometry": {
+            "type": "GeometryCollection", 
+                "geometries": [
+                    { "type": "MultiLineString", "coordinates": [ [ [ -489013.10541674477281, 6190993.167522321455181 ], [ -493375.752748118888121, 6064079.790609619580209 ], [ -184421.00082626088988, 6019660.108690174296498 ], [ -168160.224409321031999, 6141417.629665797576308 ], [ -486633.479599631624296, 6192579.584733730182052 ], [ -486633.479599631624296, 6192579.584733730182052 ] ] ] }
+                ] 
+            } 
+        },
+        { "type": "Feature", 
+        "properties": { 
+            "id": 10,
+            "name":"Entretiens et témoignages ",
+            "type":"corpus",
+            "corpus":"Entretiens et témoignages ",
+            "corpus_code":"c_04",
+            "corpus_map":"none",
+            "date_start":"1996",
+            "date_end":"2017" 
+        },
+        "geometry": {
+            "type": "GeometryCollection", 
+                "geometries": [
+                    { "type": "MultiLineString", "coordinates": [ [ [ -489013.10541674477281, 6190993.167522321455181 ], [ -493375.752748118888121, 6064079.790609619580209 ], [ -184421.00082626088988, 6019660.108690174296498 ], [ -168160.224409321031999, 6141417.629665797576308 ], [ -486633.479599631624296, 6192579.584733730182052 ], [ -486633.479599631624296, 6192579.584733730182052 ] ] ] }
+                ] 
+            } 
+        },
+        { "type": "Feature", 
+        "properties": { 
+            "id": 11,
+            "name":"Archives publiques",
+            "type":"corpus",
+            "corpus":"Archives publiques",
+            "corpus_code":"c_06",
+            "corpus_map":"none",
+            "date_start":"2005",
+            "date_end":"2024" 
+        },
+        "geometry": {
+            "type": "GeometryCollection", 
+                "geometries": [
+                    { "type": "MultiLineString", "coordinates": [ [ [ -489013.10541674477281, 6190993.167522321455181 ], [ -493375.752748118888121, 6064079.790609619580209 ], [ -184421.00082626088988, 6019660.108690174296498 ], [ -168160.224409321031999, 6141417.629665797576308 ], [ -486633.479599631624296, 6192579.584733730182052 ], [ -486633.479599631624296, 6192579.584733730182052 ] ] ] }
+                ] 
+            } 
+        },
+        { "type": "Feature", 
+        "properties": { 
+            "id": 13,
+            "name":"Enquêtes communales",
+            "type":"corpus",
+            "corpus":"Enquêtes communales",
+            "corpus_code":"c_07",
+            "corpus_map":"none",
+            "date_start":"1980",
+            "date_end":"1992" 
+        },
+        "geometry": {
+            "type": "GeometryCollection", 
+                "geometries": [
+                    { "type": "MultiLineString", "coordinates": [ [ [ -489013.10541674477281, 6190993.167522321455181 ], [ -493375.752748118888121, 6064079.790609619580209 ], [ -184421.00082626088988, 6019660.108690174296498 ], [ -168160.224409321031999, 6141417.629665797576308 ], [ -486633.479599631624296, 6192579.584733730182052 ], [ -486633.479599631624296, 6192579.584733730182052 ] ] ] }
+                ] 
+            } 
+        }
+    ]
+} 
+    

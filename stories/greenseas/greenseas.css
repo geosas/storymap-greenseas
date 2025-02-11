@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    font-family: "Inter", serif;
+}
+
+#btn__homeStory {
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-color: var(--colorStorie);
+    border: none;
+    padding: 15px;
+    border-radius: 1em;
+    display: flex;
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    transition: 0.5s;
+    opacity: 1;
+}
+
+#btn__homeStory:hover {
+    opacity: 0.7;
+    scale: 1.1;
+}
+
+/* Timeline */
+.timeline__block {
+    background-color: #f9f9f9;
+    width: 100%;
+    height: 6em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+    z-index: 100;
+    position: fixed;
+    bottom: 10px;
+}
+
+.timeline__year {
+    display: block;
+}
+
+.timeline__year.border {
+    border-left: 1px solid #b1b1b1;
+}
+
+.timeline__year span {display: none;}
+
+
+.timeline__year.border span{
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px;
+    color: #b1b1b1;
+    position: absolute;
+}
+
+.timelineItems_list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    height: 6em;
+}
+.timeline__itemHover {
+    background-color: var(--colorStorie);
+    color: white;
+    padding: 2px 7px;
+    border-radius: 10px;
+    display: none;
+    min-width: max-content;
+    font-size: small;
+}
+
+.timeline__itemPoint {
+    background-color: var(--colorStorie);
+    font-size: x-large;
+    width: 8px;
+    height: 8px;
+    border-radius: 1em;
+}
+
+.timeline__itemPeriode{
+    background-color: var(--colorStorie);
+    font-size: x-large;
+    width: 6px;
+    height: 6px;
+    border-radius: 1em;
+    position: fixed;
+    z-index: 100;
+}
+
+.timeline__itemPoint:hover, .timeline__itemPeriode:hover {
+    background-color:var(--colorStorie);
+    cursor:pointer;
+}
+
+.timeline__itemPoint:hover  .timeline__itemHover, .timeline__itemPeriode:hover .timeline__itemHover {
+    display: inline-flex !important;
+}
+
+/* Periode and date timeline */
+.timeline__active > * {
+    outline: 7px solid #bdbdbd78;
+}
+.time__c_01>*{
+    background-color: #3a8f98;
+}
+.time__c_01.timeline__active > *{
+    outline-color: #3a8f9894;
+}
+.time__c_01 .timeline__itemPeriode {
+    bottom: 20px;
+}
+.time__c_02 .timeline__itemPeriode {
+    bottom: 30px;
+}
+.time__c_03 .timeline__itemPeriode {
+    bottom: 40px;
+}
+
+.time__c_04 .timeline__itemPeriode {
+    bottom: 50px;
+}
+.time__c_05 .timeline__itemPeriode {
+    bottom: 60px;
+}
+.time__c_05>*{
+    background-color: #a4ebd5;
+}
+.time__c_05.timeline__active > *{
+    outline-color: #a4ebd578;
+}
+.time__c_06 .timeline__itemPeriode {
+    bottom: 70px;
+}
+.time__c_07 .timeline__itemPeriode {
+    bottom: 80px;
+}
+
+
+/* Affichage des dates selon le corpus */
+
+#customTimeline[item-corpus='c_01'] .timeline__item:not(.time__c_01){
+    display:none;
+}
+#customTimeline[item-corpus='c_02'] .timeline__item:not(.time__c_02){
+    display:none;
+}
+#customTimeline[item-corpus='c_03'] .timeline__item:not(.time__c_03){
+    display:none;
+}
+#customTimeline[item-corpus='c_04'] .timeline__item:not(.time__c_04){
+    display:none;
+}
+#customTimeline[item-corpus='c_05'] .timeline__item:not(.time__c_05){
+    display:none;
+}
+#customTimeline[item-corpus='c_06'] .timeline__item:not(.time__c_06){
+    display:none;
+}
+#customTimeline[item-corpus='c_07'] .timeline__item:not(.time__c_07){
+    display:none;
+}
+
+
+/* Affichage condictionnel des dates selon le type de l'item */
+
+#customTimeline[item-type='intro'] .timeline__itemPoint {
+    display:none;
+}
+
+/* Affichage conditionnel du template */
+.slideItem_data>.template__corpus, .slideItem_data>.template__intro {
+    display: none;
+}
+
+.slideItem_corpus>.template__data, .slideItem_corpus>.template__intro {
+    display: none;
+}
+
+.slideItem_intro>.template__data, .slideItem_intro>.template__corpus {
+    display: none;
+}
+
+.corpus_c_05 .item__badge {
+    background-color: #a4ebd5;
+    color:var(--colorStorie)
+}
+
+.corpus_c_01 .item__badge {
+    background-color: #3a8f98;
+    color:white;
+}
+
+.item__badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: small;
+}
+
+
+
+.item h2 {
+    font-weight: 700;
+    color:var(--colorStorie);
+}
+
