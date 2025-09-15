@@ -1,0 +1,153 @@
+/* Mobile */
+
+@media (min-width: 768px) {
+	#map {
+		position: fixed;
+		width: calc(100% - (var(--panelStorieSize, 50%)));
+		height: 100vh;
+		margin: 0;
+	}
+
+	#content-title {
+		display: block;
+	}
+
+	#panel-story {
+		position: fixed;
+		width: var(--panelStorieSize, 50%);
+		right: 0px;
+		overflow-y: auto;
+	}
+
+	#tools {
+		top: 10px;
+		left: calc(100% - (var(--panelStorieSize, 50%) + 4em));
+	}
+	
+	#menu {
+		left: calc(100% - (var(--panelStorieSize, 50%)  + 4em));
+		top: 135px;
+	}
+	
+	.nextButton {
+		bottom: 45%;
+		right: 2%;
+	}
+
+	.precButton {
+		bottom: 45%;
+		left: 2%;
+	}
+}
+
+@media (max-width: 768px) {
+	#panel-story {
+		position: relative;
+		width: 100%;
+		overflow-y: auto;
+	}
+
+	#map {
+		position: relative;
+		width: 100vw;
+		height: 50vh;
+		margin: 0;
+	}
+
+	#content-title {
+		display: none !important;
+	}
+
+	#template {
+		height: 50%;
+	}
+
+	#tools {
+		top: 10px;
+		left: 88%;
+	}
+	
+	#menu {
+		top: 135px;
+		left: 88%;
+	}
+
+	.nextButton {
+		bottom: 53%;
+		right:35%;
+	}
+
+	.precButton {
+		bottom: 53%;
+		left: 35%;
+	}
+}
+
+/* PC Screen */
+.ol-overviewmap {
+    bottom: 1em;
+}
+
+#panel-story {
+	background-color: white;
+	padding: 1em;
+}
+
+.panel-story-carousel {
+	height: 100%;
+	top: 0%;
+}
+
+.carousel-inner .item {
+	height: 100%;
+}
+
+.carousel {
+	overflow-x: hidden;
+}
+
+.carousel-indicators {
+	width: 100%;
+	left: 132px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+	display: none;
+}
+
+.progress {
+	border-radius: 0px;
+	height: 10px;
+	position: fixed;
+	height: 10px;
+	bottom: 0px;
+	width: 100%;
+	margin: 0;
+}
+
+.progress-bar{
+	background-color: var(--colorStorie, #212529);
+}
+
+.carButton {
+    position: fixed;
+	z-index: 10;
+	cursor: pointer;
+	background-color: var(--colorStorie, #212529);
+    color: white;
+    height: 45px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    border-radius: 1em;
+	opacity: 1;
+	transition: 0.3s;
+	line-height: 0;
+}
+
+.carButton:hover {
+    opacity: .7!important;
+}

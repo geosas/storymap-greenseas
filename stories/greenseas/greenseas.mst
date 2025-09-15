@@ -1,44 +1,110 @@
 {{#id}}
-<div class="container-fluid slideItem_{{type}} slide__item mt-4" id="slide_{{id}}" item-type="{{type}}" item-corpus="{{corpus_code}}">
-    <button id="btn__homeStory" onclick="$('.carousel').carousel(0);">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13 19H19V9.97815L12 4.53371L5 9.97815V19H11V13H13V19ZM21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20Z"></path></svg>
+<div class="container-fluid slideItem_{{type}} slide__item mt-4" id="slide_{{id}}" item-type="{{type}}" item-corpus="{{corpus_code}}">   
+    <button id="btn__homeStory" onclick="goToSlide(1);">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13 19H19V9.97815L12 4.53371L5 9.97815V19H11V13H13V19ZM21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20Z"></path></svg>
     </button>
     <div class="template__data corpus_{{corpus_code}}">
         <span class="item__badge">{{corpus}}</span>
-        <h2 class="my-3">{{name}}</h2>     
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-   
-    </div> 
-    <div class="template__corpus">
-        <h2>{{name}}</h2>        
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-    </div>  
-    <div class="template__intro">
-        <h2>Chapitre 1 : Comment les "marées vertes" sont-elles documentées ?</h2>       
-        <h5>Introduction générale</h5> 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-        <div class="d-flex">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Photographies aériennes du littoral</h5>
-                    <a type="button" onclick="$('.carousel').carousel(4);" class="card-link">Consulter</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Etudes et expertises scientifiques</h5>
-                    <a type="button" onclick="$('.carousel').carousel(1);" class="card-link">Consulter</a>
-                </div>
-            </div>
+        <h2 class="my-3">{{name}}</h2> 
+        <div class="tplData_metadata">
+          <div class="data_metada">
+            <div class="metadata_title">Date de production ou de collecte</div>
+            <p>{{date_production}}</p>
+          </div>
+          <div class="data_metada">
+            <div class="metadata_title">Date de l'information collectée</div>
+            <p>{{date_info}}</p>
+          </div>
+          <div class="data_metada">
+            <div class="metadata_title">Source(s) / Auteur(s)</div>
+            {{#url_source}}
+              <p><a target="_blank" href="{{url_source}}">{{source_auteur}}</a></p>
+            {{/url_source}}
+            {{^url_source}}
+              <p>{{source_auteur}}</p>
+            {{/url_source}}
+          </div>
+          <div class="data_metada">
+            <div class="metadata_title">Lieu</div>
+            <p>{{lieu}}</p>
+          </div>
+        </div>  
+        {{#id_img}}
+        <div class="tplData_img">
+            <img src="stories/greenseas/corpus_doc/{{id_img}}" class="img-fluid" alt="{{name}}" id="image_{{id}}">
+            <a class="img__btnOpen" target="_blank" href="stories/greenseas/corpus_doc/{{id_img}}" title="Ouvrir en plein écran">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 8.41421V12L5 12L5 5L12 5V7L8.41421 7L17 15.5858V12L19 12L19 19H12V17H15.5858L7 8.41421Z"></path></svg>
+            </a>
         </div>
-    </div>  
+        {{/id_img}} 
+        {{#id_son}}
+        <div class="tplData_sound">
+          <audio controls src="stories/greenseas/corpus_doc/{{id_son}}" controls autoplay muted></audio>
+        </div>
+        {{/id_son}}  
+        {{#id_doc}}
+        <div class="tplData_doc mt-3">
+            <a target="_blank" href="stories/greenseas/corpus_doc/{{id_doc}}" class="btn btn__doc">
+              <span>Consulter le document</span> 
+            </a>
+        </div>
+        {{/id_doc}}   
+        <p>{{{texte}}}</p>  
+    </div> 
+    <div class="template__corpus" style="background-color:var(--color-{{corpus_code}})">
+        <div class="templateCorpus__header" >
+          <div><img src="stories/greenseas/img/icon_corpus_{{corpus_code}}.svg"/></div>
+          <h2>{{name}}</h2> 
+        </div>  
+        <div class="templateCorpus__body">  
+          <div>
+            {{{texte}}}
+          </div>  
+          <div class="corpus_dataList {{corpus_code}} mt-3" id="corpusDataList_{{corpus_code}}"></div>
+        </div>
+    </div> 
+    <div class="template__intro">
+        <div class="badge__intro">
+            <span class="item__badge">Chapitre 1</span>
+        </div>        
+        <h1>Comment les "marées vertes" sont-elles documentées ?</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+        <div id="corpusCardsList">            
+            <a type="button" onclick="goToSlide(20);" class="corpus__card" style="background-color:var(--color-c_01)">
+                <div><img src="stories/greenseas/img/icon_corpus_c_01.svg"/></div>
+                <div class="corpus__cardTitle">Anciennes photographies aériennes du littoral</div>
+            </a>
+            <a type="button" onclick="goToSlide(30);" class="corpus__card" style="background-color:var(--color-c_02)">
+                <div><img src="stories/greenseas/img/icon_corpus_c_02.svg"/></div>
+                <div class="corpus__cardTitle">Archives de presse, revue</div>
+            </a>
+            <a type="button" onclick="goToSlide(40);" class="corpus__card" style="background-color:var(--color-c_03)">
+                <div><img src="stories/greenseas/img/icon_corpus_c_03.svg"/></div>
+                <div class="corpus__cardTitle">Archives citoyennes</div>
+            </a>
+            <a type="button" onclick="goToSlide(50);" class="corpus__card" style="background-color:var(--color-c_04)">
+                <div><img src="stories/greenseas/img/icon_corpus_c_04.svg"/></div>
+                <div class="corpus__cardTitle">Entretiens, temoignages</div>
+            </a>            
+            <a type="button" onclick="goToSlide(60);" class="corpus__card" style="background-color:var(--color-c_05)">
+                <div><img src="stories/greenseas/img/icon_corpus_c_05.svg"/></div>
+                <div class="corpus__cardTitle">Etudes et expertises scientifiques</div>
+            </a>
+            <a type="button" onclick="goToSlide(70);" class="corpus__card" style="background-color:var(--color-c_06)">
+                <div><img src="stories/greenseas/img/icon_corpus_c_06.svg"/></div>
+                <div class="corpus__cardTitle">Archives publiques</div>
+            </a>            
+            <a type="button" onclick="goToSlide(80);" class="corpus__card" style="background-color:var(--color-c_07)">
+                <div><img src="stories/greenseas/img/icon_corpus_c_07.svg"/></div>
+                <div class="corpus__cardTitle">Enquêtes communales</div>
+            </a>
+        </div>
+    </div>      
 </div>
-<style>
 
-
-
-</style>
 <script>
+
 // Timeline param
 startTimeline = 1945 - 1;
 endTimeline = 2035 + 1;
@@ -66,30 +132,201 @@ if (document.getElementById('customTimeline') === null){
     document.getElementById("customTimeline").innerHTML = htmlYears;    
 }
 
+// Update daza-actual-slide attribute to btn caroussel
+function slideTo(id) {
+    const btnCaroussel = document.querySelectorAll(".carButton a"); 
+    btnCaroussel.forEach(element => {
+        element.setAttribute("data-actual-slide", id);
+        
+    });
+}
+
+// Function change slide 
+function goToSlide(id){
+    const featureId = document.querySelector(`#myCarousel .carousel-indicators button[data-featureid="${id}"]`);
+    if (!featureId) {
+        console.error('Le bouton correspondant à cet ID n\'a pas été trouvé.');
+        return;
+    }
+
+    const slideId = parseInt(featureId.getAttribute("data-bs-slide-to"), 10);
+    
+    if (isNaN(slideId)) {
+        console.error('L\'ID du slide n\'est pas valide.');
+        return;
+    }
+    $('.carousel').carousel(slideId);
+    slideTo(slideId);
+}
+
 // Create point for data
-function addDate(date) {
+function addDate(date,id) {
+    let idItem = document.querySelector(".carousel-indicators button[data-featureid='"+ id +"']");
+    let slideItem = idItem.getAttribute("data-bs-slide-to");
     div = document.querySelector("#customTimeline .timeline__year[data-years='" + date + "'] .timelineItems_list");
-    div.innerHTML += "<div class='timeline__item time__{{corpus_code}}' id='timelineItem__{{id}}'><div class='timeline__itemPoint' ><div class='timeline__itemHover'>{{name}}</div></div></div>";
-};    
+    div.innerHTML += `<div class='timeline__item time__{{corpus_code}}' id='timelineItem__{{id}}'><a type='button' onclick="$('.carousel').carousel(${slideItem});slideTo(${slideItem});"><div class='timeline__itemPoint' ><div class='timeline__itemHover'>{{name}}</div></div></a></div>`;
+};  
 
 // Create bar for corpus
-function addPeriode(start,end) {
+function addPeriode(start,end,id) {
     const timelineWidth = document.querySelector("#customTimeline").offsetWidth;
     let yearsPeriode = end - start +1;
     let sizeBar= (timelineWidth/numberYears) * yearsPeriode;
     let sizeBarPerc = sizeBar*100/timelineWidth;
+    let idItem = document.querySelector(".carousel-indicators button[data-featureid='"+ id +"']");
+    let slideItem = idItem.getAttribute("data-bs-slide-to");
     div = document.querySelector("#customTimeline .timeline__year[data-years='" + start + "'] .timelineItems_list");
-    div.innerHTML += "<div class='timeline__item time__{{corpus_code}}' id='timelineItem__{{id}}'><div class='timeline__itemPeriode' style='width:" + sizeBarPerc + "%!important'><div class='timeline__itemHover'>{{name}}</div></div></div>";        
+    div.innerHTML += `<div class='timeline__item time__{{corpus_code}}' id='timelineItem__{{id}}'><a type='button' onclick="$('.carousel').carousel(${slideItem});slideTo(${slideItem});"><div class='timeline__itemPeriode' style='width:${sizeBarPerc}%!important'><div class='timeline__itemHover'>{{name}}</div></div></a></div>`;        
 };
 
 {{#date_end}}
-    addPeriode({{date_start}},{{date_end}});
+    addPeriode({{date_start}},{{date_end}},{{id}});
 {{/date_end}}
 {{^date_end}}
     {{#date_start}}
-        addDate({{date_start}});
+        addDate({{date_start}},{{id}});
     {{/date_start}}
 {{/date_end}}
+
+// Filter map 
+mapStory = ks.mapStorie(); 
+
+function styleDefault(feature) {
+      const type = feature.get('corpus_map');
+      let fillColor;
+      let strokeColor;
+      let iconUrl;
+      switch (type) {
+        case 'c_01':
+          fillColor = 'rgba(46,84,101,0.6)';
+          strokeColor = 'rgba(46,84,101,0.8)'; 
+          iconUrl = "stories/greenseas/img/icon_map_c01.svg"
+          break;
+        case 'c_02':
+          fillColor = 'rgba(61,115,118,0.6)';
+          strokeColor = 'rgba(61,115,118,0.8)'; 
+          iconUrl = "stories/greenseas/img/icon_map_c02.svg"
+          break;
+        case 'c_03':
+          fillColor = 'rgba(127,179,179,0.6)';
+          strokeColor = 'rgba(127,179,179,0.8)'; 
+          iconUrl = "stories/greenseas/img/icon_map_c03.svg"
+          break;
+        case 'c_04':
+          fillColor = 'rgba(105,149,116,0.6)';
+          strokeColor = 'rgba(105,149,116,0.8)'; 
+          iconUrl = "stories/greenseas/img/icon_map_c04.svg"
+          break;
+        case 'c_05':
+          fillColor = 'rgba(146,180,155,0.6)';
+          strokeColor = 'rgba(146,180,155,0.8)'; 
+          iconUrl = "stories/greenseas/img/icon_map_c05.svg"
+          break;
+        case 'c_06':
+          fillColor = 'rgba(182,210,197,0.6)';
+          strokeColor = 'rgba(182,210,197,0.8)';
+          iconUrl = "stories/greenseas/img/icon_map_c06.svg"
+          break;
+        case 'c_07':
+          fillColor = 'rgba(58,143,152,0.6)';
+          strokeColor = 'rgba(58,143,152,0.8)';
+          iconUrl = "stories/greenseas/img/icon_map_c07.svg"
+          break;
+        case 'none':
+          fillColor = 'rgba(134,235,213,0)';
+          strokeColor = 'rgba(134,235,213,0)';
+          iconUrl = "/"
+          break;
+        default:
+          fillColor = 'rgba(120, 120, 120, 0)';
+          iconUrl = "stories/greenseas/img/icon_map.svg";
+      }
+
+      return new ol.style.Style({
+        fill: new ol.style.Fill({ color: fillColor }),
+        stroke: new ol.style.Stroke({ color: strokeColor, width: 1 }), 
+        image: new ol.style.Icon({ src:iconUrl, scale: 0.3 })
+      });
+}
+
+function styleWithoutMultiPoint(feature) {
+      const type = feature.get('corpus_map');
+      let fillColor;
+      let strokeColor;
+      let iconUrl;
+      switch (type) {
+        case 'c_01':
+          fillColor = 'rgba(46,84,101,0.6)';
+          strokeColor = 'rgba(46,84,101,0.8)'; 
+          iconUrl = "stories/greenseas/img/icon_map_c01.svg"
+          break;
+        case 'c_02':
+          fillColor = 'rgba(61,115,118,0.6)';
+          strokeColor = 'rgba(61,115,118,0.8)'; 
+          iconUrl = "stories/greenseas/img/icon_map_c02.svg"
+          break;
+        case 'c_03':
+          fillColor = 'rgba(127,179,179,0.6)';
+          strokeColor = 'rgba(127,179,179,0.8)'; 
+          iconUrl = "stories/greenseas/img/icon_map_c03.svg"
+          break;
+        case 'c_04':
+          fillColor = 'rgba(105,149,116,0.6)';
+          strokeColor = 'rgba(105,149,116,0.8)'; 
+          iconUrl = "stories/greenseas/img/icon_map_c04.svg"
+          break;
+        case 'c_05':
+          fillColor = 'rgba(146,180,155,0.6)';
+          strokeColor = 'rgba(146,180,155,0.8)'; 
+          iconUrl = "stories/greenseas/img/icon_map_c05.svg"
+          break;
+        case 'c_06':
+          fillColor = 'rgba(182,210,197,0.6)';
+          strokeColor = 'rgba(182,210,197,0.8)';
+          iconUrl = "stories/greenseas/img/icon_map_c06.svg"
+          break;
+        case 'c_07':
+          fillColor = 'rgba(58,143,152,0.6)';
+          strokeColor = 'rgba(58,143,152,0.8)';
+          iconUrl = "stories/greenseas/img/icon_map_c07.svg"
+          break;
+        case 'none':
+          fillColor = 'rgba(134,235,213,0)';
+          strokeColor = 'rgba(134,235,213,0)';
+          iconUrl = "/"
+          break;
+        default:
+          fillColor = 'rgba(120, 120, 120, 0)';
+          iconUrl = "stories/greenseas/img/icon_map.svg";
+      }
+
+      return new ol.style.Style({
+        fill: new ol.style.Fill({ color: fillColor }),
+        stroke: new ol.style.Stroke({ color: strokeColor, width: 1 }), 
+        image: new ol.style.Icon({ src:iconUrl, scale: 0 })
+      });
+}
+
+function styleIfMatch(expectedValue) {
+  return function(feature) {
+    if (feature.get('corpus_map') !== expectedValue) {
+      return null;
+    }
+    return styleDefault(feature); // Pas de style si condition non remplie
+  };
+}
+
+function updateMapStyle(itemType,itemCorpus){
+    mapStory.getAllLayers().forEach(layer => {
+        if (layer.get('name') === 'data_app') {
+            if(itemType === "intro"){
+                layer.setStyle(styleWithoutMultiPoint);
+            } else {
+                layer.setStyle(styleIfMatch(itemCorpus));
+            }            
+        }
+    });
+}
 
 // Event change item 
 $('.carousel').on('slide.bs.carousel', function (e) {
@@ -99,6 +336,7 @@ $('.carousel').on('slide.bs.carousel', function (e) {
     let timeline = document.querySelector("#customTimeline");
     timeline.setAttribute("item-type", currentItemType);
     timeline.setAttribute("item-corpus", currentItemCorpus);
+    updateMapStyle(currentItemType,currentItemCorpus)
     // Add active class to item timeline
     let timelineActiv = document.querySelector(".timeline__active");
     if(timelineActiv){
@@ -110,5 +348,27 @@ $('.carousel').on('slide.bs.carousel', function (e) {
         currentItemDate.classList.add("timeline__active");
     }    
 });
+
+// Get data for each corpus 
+if("{{type}}" === "corpus"){
+  var urlCsvData = "stories/greenseas/greenseas_info.csv";
+  Papa.parse(urlCsvData, {
+    header: true,
+    download: true,
+    complete: function(results) {       
+      const corpus_id = "{{corpus_code}}"
+      const filteredData = results.data.filter(item => item.id_corpus === corpus_id && item.niveau === "3");
+      const fdiv = document.getElementById('corpusDataList_{{corpus_code}}');
+      filteredData.forEach(item => {  // Ajouter le titre à la div
+        let cardFeature = `
+        <a type="button" onclick="goToSlide(${item.id_story});" class="corpus__card">
+                <div class="corpus__cardTitle">${item.titre}</div>
+            </a>
+        `;
+        fdiv.insertAdjacentHTML( 'beforeend', cardFeature );  // Ajouter la div au conteneur parent
+      });
+    },
+  });      
+}
 </script>
 {{/id}}

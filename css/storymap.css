@@ -1,0 +1,148 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	position: relative;
+}
+
+#map {
+	position: fixed;
+}
+
+#tools,
+#menu {
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+	border-radius: 15px;
+}
+
+#tools {
+	position: absolute;
+	z-index: 50;
+}
+
+#menu {
+	position: absolute;
+	z-index: 50;
+}
+
+.no-visible {
+	display: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.ol-zoom {
+	display: none;
+}
+
+.ol-overviewmap .ol-overviewmap-map {
+	border: 1px solid #b8b8b89c;
+}
+
+#splash {
+	position: fixed;
+	z-index: 50;
+	width: 100%;
+	background-color: #fffffff5;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+
+#content-title {
+	position: fixed;
+	left: 20px;
+	max-width: 40%;
+}
+
+#feature-info {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	z-index: 100;
+}
+
+audio {
+	margin-top: 10px;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {	
+	#content-title, .ol-overviewmap {
+		display: none !important;
+	}
+}
+
+/* Share panel */
+.is-hidden {
+	display: none;
+}
+
+.iconShare__list > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 2em;
+    font-size: small;
+    text-decoration: none;
+    color: currentColor;
+	transition: 0.3s;
+}
+
+.iconShare__list > a:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.iconShare__list {
+    display: flex;
+}
+
+.iconShare__list > a > i {
+    font-size: large;
+    background-color: #212529;
+    color: white;
+    border-radius: 2em;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#block__ShareLink {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid #d1d1d1;
+    padding: 0.5em .5em;
+    border-radius: .7em;
+}
+
+#urlShare__link {
+    border: none;
+    width: 100%;
+}
+
+#blockIframe > div {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+#blockIframe > .textEdit {
+    border: 1px solid #d1d1d1;
+    padding: 0.5em .5em;
+    border-radius: .7em;
+    font-family: monospace;
+    font-size: smaller;
+}

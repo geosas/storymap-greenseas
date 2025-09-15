@@ -1,0 +1,78 @@
+{
+  "splash": {
+    "title":"StoryMap de démo",
+    "text":"Mode carousel"
+  },
+  "theme": {
+    "color" : "#009688"
+  },
+  "tooltip": {
+    "fields": [
+      "nom","date_creation"
+    ],
+    "template":"{{nom}} - ({{date_creation}})"
+  },
+  "map": {
+		"center": [-227028,6182514],
+		"zoom": 12,
+    "width": "100%",
+    "overview": false,
+    "url": "http://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+    "animation": true
+  },
+  "data": {
+    "title": "StoryMap de démo",
+    "subtitle": "Mode carousel",
+    "template": {
+      "name": "carousel",
+      "size": "40%"
+    },
+    "url": "stories/demo_carousel/rnr.geojson",
+    "orderby": "ordre",
+    "fields": [
+      {
+        "name": "nom",
+        "type": "title"
+      }
+    ],
+    "id": "id",
+    "tpl": "stories/demo_carousel/demo.mst",
+    "analyse": {
+      "type": "single",
+      "field": "",
+      "values": [],
+      "styles": [
+        {
+          "fill": {
+            "color": "rgba(14,152,139,0.6)"
+          },
+          "stroke": {
+            "color": "rgba(14,152,139)",
+            "width": 0.5
+          },
+          "icon": {
+            "src": "",
+            "scale": 0.2
+          }
+        }
+      ]
+    },
+    "hightlightstyle": {
+      "fill": {
+        "color": "rgba(14,152,139,0.8)"
+      },
+      "icon": {
+        "src": "",
+        "scale": 0.25
+      },
+      "stroke": {
+        "color": "rgba(14,152,139,0)",
+        "width": 6
+      }
+    }
+  },
+  "extradata": {
+    "url": "",
+    "linkfield": ""
+  }
+}

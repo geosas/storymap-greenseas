@@ -34,32 +34,69 @@
     "analyse": {
       "type": "categories",
       "field": "corpus_map",
-      "values": ["c_01","c_05","none"],
+      "values": ["c_01","c_02","c_03","c_04","c_05","c_06","c_07","none"],
       "styles": [
         {
           "fill": {
-            "color": "rgba(58,143,152,0.4)"
+            "color": "rgba(46,84,101,0.6)"
           },
           "stroke": {
-            "color": "rgba(58,143,152,0.7)",
-            "width": 0.5
-          },
-          "icon": {
-            "src" : "stories/greenseas/img/icon_map.svg",
-            "scale" : 0.3
+            "color": "rgba(46,84,101,0.8)",
+            "width": 1
           }
         },
         {
           "fill": {
-            "color": "rgba(134,235,213,0.4)"
+            "color": "rgba(61,115,118,0.6)"
           },
           "stroke": {
-            "color": "rgba(134,235,213,0.7)",
-            "width": 0.5
+            "color": "rgba(61,115,118,0.8)",
+            "width": 1
+          }
+        },
+        {
+          "fill": {
+            "color": "rgba(127,179,179,0.6)"
           },
-          "icon": {
-            "src" : "stories/greenseas/img/icon_map2.svg",
-            "scale" : 0.3
+          "stroke": {
+            "color": "rgba(127,179,179,0.8)",
+            "width": 1
+          }
+        },
+        {
+          "fill": {
+            "color": "rgba(105,149,116,0.6)"
+          },
+          "stroke": {
+            "color": "rgba(105,149,116,0.8)",
+            "width": 1
+          }
+        },
+        {
+          "fill": {
+            "color": "rgba(146,180,155,0.6)"
+          },
+          "stroke": {
+            "color": "rgba(146,180,155,0.8)",
+            "width": 1
+          }
+        },
+        {
+          "fill": {
+            "color": "rgba(182,210,197,0.6)"
+          },
+          "stroke": {
+            "color": "rgba(182,210,197,0.8)",
+            "width": 1
+          }
+        },
+        {
+          "fill": {
+            "color": "rgba(58,143,152,0.6)"
+          },
+          "stroke": {
+            "color": "rgba(58,143,152,0.8)",
+            "width": 1
           }
         },
         {
@@ -68,7 +105,7 @@
           },
           "stroke": {
             "color": "rgba(37,56,72,0)",
-            "width": 0.5
+            "width": 1
           }
         }
       ]
@@ -88,7 +125,7 @@
     }
   },
   "extradata": {
-    "url": "",
-    "linkfield": ""
+    "url": "greenseas_info.csv",
+    "linkfield": "id_story"
   }
 }

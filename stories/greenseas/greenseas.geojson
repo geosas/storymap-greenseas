@@ -23,14 +23,14 @@
         },
         { "type": "Feature", 
         "properties": { 
-            "id": 2,
-            "name":"Etudes et expertises scientifiques",
+            "id": 20,
+            "name":"Photographies aériennes du littoral",
             "type":"corpus",
-            "corpus":"Etudes et expertises scientifiques",
-            "corpus_code":"c_05",
+            "corpus":"Photographies aériennes du littoral",
+            "corpus_code":"c_01",
             "corpus_map":"none",
-            "date_start":"1987",
-            "date_end":"2002" 
+            "date_start":"1966",
+            "date_end":"2024" 
         },
         "geometry": {
             "type": "GeometryCollection", 
@@ -41,7 +41,25 @@
         },
         { "type": "Feature", 
         "properties": { 
-            "id": 3,
+            "id": 60,
+            "name":"Etudes et expertises scientifiques",
+            "type":"corpus",
+            "corpus":"Etudes et expertises scientifiques",
+            "corpus_code":"c_05",
+            "corpus_map":"none",
+            "date_start":"1952",
+            "date_end":"1988" 
+        },
+        "geometry": {
+            "type": "GeometryCollection", 
+                "geometries": [
+                    { "type": "MultiLineString", "coordinates": [ [ [ -489013.10541674477281, 6190993.167522321455181 ], [ -493375.752748118888121, 6064079.790609619580209 ], [ -184421.00082626088988, 6019660.108690174296498 ], [ -168160.224409321031999, 6141417.629665797576308 ], [ -486633.479599631624296, 6192579.584733730182052 ], [ -486633.479599631624296, 6192579.584733730182052 ] ] ] }
+                ] 
+            } 
+        },
+        { "type": "Feature", 
+        "properties": { 
+            "id": 61,
             "name":"Intervention manuscrite de D.Briault 'Les marées Vertes' dans le cadre du colloque Eutrophisation du 25-26 novembre 1987",
             "type":"data",
             "corpus":"Etudes et expertises scientifiques",
@@ -60,7 +78,7 @@
         },
         { "type": "Feature", 
         "properties": { 
-            "id": 4,
+            "id": 62,
             "name":"Étude du phénomène de 'Marée Verte' affectant les baies de Lannion et de Saint-Brieuc par Joël Kopp en 1977",
             "type":"data",
             "corpus":"Etudes et expertises scientifiques",
@@ -79,63 +97,7 @@
         },
         { "type": "Feature", 
         "properties": { 
-            "id": 5,
-            "name":"Photographies aériennes du littoral",
-            "type":"corpus",
-            "corpus":"Photographies aériennes du littoral",
-            "corpus_code":"c_01",
-            "corpus_map":"none",
-            "date_start":"1955",
-            "date_end":"1997" 
-        },
-        "geometry": {
-            "type": "GeometryCollection", 
-                "geometries": [
-                    { "type": "MultiLineString", "coordinates": [ [ [ -489013.10541674477281, 6190993.167522321455181 ], [ -493375.752748118888121, 6064079.790609619580209 ], [ -184421.00082626088988, 6019660.108690174296498 ], [ -168160.224409321031999, 6141417.629665797576308 ], [ -486633.479599631624296, 6192579.584733730182052 ], [ -486633.479599631624296, 6192579.584733730182052 ] ] ] }
-                ] 
-            } 
-        },
-        { "type": "Feature", 
-        "properties": { 
-            "id": 6,
-            "name":"Photographie aérienne de la baie de Saint Michel en Grève en mai 1971",
-            "type":"data",
-            "corpus":"Photographies aériennes du littoral",
-            "corpus_code":"c_01",
-            "corpus_map":"c_01",
-            "date_start":"1971",
-            "date_end":"" 
-        },
-        "geometry": {
-            "type": "GeometryCollection", 
-                "geometries": [
-                    { "type": "MultiPolygon", "coordinates": [ [ [ [ -514996.310501778498292, 6199529.548190876841545 ], [ -518555.136321362631861, 6190164.217086710035801 ], [ -537285.798529699910432, 6190164.217086710035801 ], [ -535225.425686783040874, 6199904.161435043439269 ], [ -520615.50916427973425, 6206272.586585879325867 ], [ -514996.310501778498292, 6199529.548190876841545 ] ] ] ] },
-                    { "type": "MultiPoint", "coordinates": [ [ -297720.628885061945766, 6162068.223774204030633 ] ] }
-                ] 
-            } 
-        },
-        { "type": "Feature", 
-        "properties": { 
-            "id": 7,
-            "name":"Photographie aérienne de la baie de La Fresnaye en mai 1966",
-            "type":"data",
-            "corpus":"Photographies aériennes du littoral",
-            "corpus_code":"c_01",
-            "corpus_map":"c_01",
-            "date_start":"1966",
-            "date_end":"" 
-        },
-        "geometry": {
-            "type": "GeometryCollection", 
-                "geometries": [
-                    { "type": "MultiPolygon", "coordinates": [ [ [ [ -407107.696181753301062, 6235117.80638672132045 ], [ -365151.012835077184718, 6256096.14806005731225 ], [ -365151.012835077184718, 6245232.36397922411561 ], [ -389875.486950082704425, 6225377.862038386054337 ], [ -407107.696181753301062, 6235117.80638672132045 ] ] ] ] },
-                    { "type": "MultiPoint", "coordinates": [ [ -371144.824741745193023, 6193535.736284212209284 ] ] }
-                ] 
-            } 
-        },
-        { "type": "Feature", 
-        "properties": { 
-            "id": 8,
+            "id": 30,
             "name":"Archives de presse, revue",
             "type":"corpus",
             "corpus":"Archives de presse, revue",
@@ -153,7 +115,7 @@
         },
         { "type": "Feature", 
         "properties": { 
-            "id": 9,
+            "id": 40,
             "name":"Archives citoyennes",
             "type":"corpus",
             "corpus":"Archives citoyennes",
@@ -171,7 +133,7 @@
         },
         { "type": "Feature", 
         "properties": { 
-            "id": 10,
+            "id": 50,
             "name":"Entretiens et témoignages ",
             "type":"corpus",
             "corpus":"Entretiens et témoignages ",
@@ -189,7 +151,7 @@
         },
         { "type": "Feature", 
         "properties": { 
-            "id": 11,
+            "id": 70,
             "name":"Archives publiques",
             "type":"corpus",
             "corpus":"Archives publiques",
@@ -207,7 +169,7 @@
         },
         { "type": "Feature", 
         "properties": { 
-            "id": 13,
+            "id": 80,
             "name":"Enquêtes communales",
             "type":"corpus",
             "corpus":"Enquêtes communales",
@@ -222,7 +184,187 @@
                     { "type": "MultiLineString", "coordinates": [ [ [ -489013.10541674477281, 6190993.167522321455181 ], [ -493375.752748118888121, 6064079.790609619580209 ], [ -184421.00082626088988, 6019660.108690174296498 ], [ -168160.224409321031999, 6141417.629665797576308 ], [ -486633.479599631624296, 6192579.584733730182052 ], [ -486633.479599631624296, 6192579.584733730182052 ] ] ] }
                 ] 
             } 
-        }
+        },
+        { 	
+		"type": "Feature", 
+		"properties": { 
+			"id": 22, 
+			"name": "Photographie aérienne de Saint Michel en Grève en juillet 2016", 
+			"type":"data",
+            "corpus":"Photographies aériennes du littoral",
+            "corpus_code":"c_01",
+            "corpus_map":"c_01",
+            "date_start":"2016",
+            "date_end":""
+		}, 
+		"geometry": { 
+		    "type": "GeometryCollection", 
+                    "geometries": [
+				{ "type": "MultiPolygon", "coordinates": [ [ [ [ -396416.963140643958468, 6221397.871652559377253 ], [ -398188.741678234713618, 6218310.958530363626778 ], [ -408636.755322584533133, 6220155.800100431777537 ], [ -403595.406081604596693, 6228649.377625998109579 ], [ -396416.963140643958468, 6221397.871652559377253 ] ] ] ] },
+				{ "type": "MultiPoint", "coordinates": [ [ -342540, 6250640 ] ] }
+		    ]
+		}
+	},
+	{ 	
+		"type": "Feature", 
+		"properties": { 
+			"id": 21, 
+			"name": "Photographie aérienne de la baie de Saint Michel en Grève en mai 1971", 
+			"type":"data",
+            "corpus":"Photographies aériennes du littoral",
+            "corpus_code":"c_01",
+            "corpus_map":"c_01",
+            "date_start":"1971",
+            "date_end":""
+		}, 
+		"geometry": { 
+		    "type": "GeometryCollection", 
+                    "geometries": [
+				{ "type": "MultiPolygon", "coordinates": [ [ [ [ -406210.167577948945109, 6223983.037847980856895 ], [ -406446.898280537105165, 6211909.772015986032784 ], [ -394639.954488954215776, 6211673.041313397698104 ], [ -394491.997799836623017, 6223835.081158862449229 ], [ -406210.167577948945109, 6223983.037847980856895 ] ] ] ] },
+				{ "type": "MultiPoint", "coordinates": [ [ -171755, 5975868 ] ] }
+		    ]
+		}
+	},
+	{ 	
+		"type": "Feature", 
+		"properties": { 
+			"id": 24, 
+			"name": "Photographie aérienne de la baie de La Fresnaye en juillet 2023", 
+			"type":"data",
+            "corpus":"Photographies aériennes du littoral",
+            "corpus_code":"c_01",
+            "corpus_map":"c_01",
+            "date_start":"2023",
+            "date_end":""
+		}, 
+		"geometry": { 
+		    "type": "GeometryCollection", 
+                    "geometries": [
+				{ "type": "MultiPolygon", "coordinates": [ [ [ [ -253160.245576411631191, 6213449.241546785458922 ], [ -255853.285548698069761, 6215818.598830095492303 ], [ -265149.452376110013574, 6209034.209669142961502 ], [ -258261.484754685021471, 6203311.499728034250438 ], [ -253160.245576411631191, 6213449.241546785458922 ] ] ] ] },
+				{ "type": "MultiPoint", "coordinates": [ [ -342540, 6250640 ] ] }
+		    ]
+		}
+	},
+	{ 	
+		"type": "Feature", 
+		"properties": { 
+			"id": 23, 
+			"name": "Photographie aérienne de la baie de La Fresnaye en mai 1966", 
+			"type":"data",
+            "corpus":"Photographies aériennes du littoral",
+            "corpus_code":"c_01",
+            "corpus_map":"c_01",
+            "date_start":"1966",
+            "date_end":""
+		}, 
+		"geometry": { 
+		    "type": "GeometryCollection", 
+                    "geometries": [
+				{ "type": "MultiPolygon", "coordinates": [ [ [ [ -254869.612161866156384, 6214803.724281432107091 ], [ -254869.612161866156384, 6206977.084439274854958 ], [ -263829.331230502575636, 6206956.101490636356175 ], [ -263787.36533322557807, 6214740.775435516610742 ], [ -254869.612161866156384, 6214803.724281432107091 ] ] ] ] },
+				{ "type": "MultiPoint", "coordinates": [ [ -171755, 5975868 ] ] }
+		    ]
+		}
+	},
+	{ 	
+		"type": "Feature", 
+		"properties": { 
+			"id": 25, 
+			"name": "Photographie aérienne de la Plage du Ry en juillet 2018", 
+			"type":"data",
+            "corpus":"Photographies aériennes du littoral",
+            "corpus_code":"c_01",
+            "corpus_map":"c_01",
+            "date_start":"2018",
+            "date_end":""
+		}, 
+		"geometry": { 
+		    "type": "GeometryCollection", 
+                    "geometries": [
+				{ "type": "MultiPolygon", "coordinates": [ [ [ [ -479187.867288868117612, 6121280.595860658213496 ], [ -477598.585285992361605, 6122342.275080502033234 ], [ -477919.031148079375271, 6124870.236881410703063 ], [ -480872.63568499207031, 6122649.77363502793014 ], [ -479187.867288868117612, 6121280.595860658213496 ] ] ] ] },
+				{ "type": "MultiPoint", "coordinates": [ [ -342540, 6250640 ] ] }
+		    ]
+		}
+	},
+	{ 	
+		"type": "Feature", 
+		"properties": { 
+			"id": 64, 
+			"name": "Photographie aérienne de la baie de Saint Michel en Grève en mai 1952", 
+			"type":"data",
+            "corpus":"Etudes et expertises scientifiques",
+            "corpus_code":"c_05",
+            "corpus_map":"c_05",
+            "date_start":"1952",
+            "date_end":""
+		}, 
+		"geometry": { 
+		    "type": "GeometryCollection", 
+                    "geometries": [
+				{ "type": "MultiPolygon", "coordinates": [ [ [ [ -394371.673882849048823, 6217093.908624661155045 ], [ -401803.42842175491387, 6217145.697854897938669 ], [ -401829.323036873072851, 6225095.344696166925132 ], [ -394345.779267730889842, 6225095.344696166925132 ], [ -394371.673882849048823, 6217093.908624661155045 ] ] ] ] },
+				{ "type": "MultiPoint", "coordinates": [ [ -171755, 5975868 ] ] }
+		    ]
+		}
+	},
+    { 	
+		"type": "Feature", 
+		"properties": { 
+			"id": 65, 
+			"name": "Photographie aérienne de la baie de Saint Michel en Grève en août 1966", 
+			"type":"data",
+            "corpus":"Etudes et expertises scientifiques",
+            "corpus_code":"c_05",
+            "corpus_map":"c_05",
+            "date_start":"1966",
+            "date_end":""
+		}, 
+		"geometry": { 
+		    "type": "GeometryCollection", 
+                    "geometries": [
+				{ "type": "MultiPolygon", "coordinates": [ [ [ [ -406639.279664083966054, 6220059.952915374189615 ], [ -398109.711042536655441, 6219955.0381721816957 ], [ -398099.219568217406049, 6228736.402177390642464 ], [ -406639.279664083966054, 6228725.910703071393073 ], [ -406639.279664083966054, 6220059.952915374189615 ] ] ] ] },
+				{ "type": "MultiPoint", "coordinates": [ [ -171755, 5975868 ] ] }
+		    ]
+		}
+	},
+	{ 	
+		"type": "Feature", 
+		"properties": { 
+			"id": 66, 
+			"name": "Photographie aérienne de la baie de Saint Brieuc-Anse de Morieux en août 1966", 
+			"type":"data",
+            "corpus":"Etudes et expertises scientifiques",
+            "corpus_code":"c_05",
+            "corpus_map":"c_05",
+            "date_start":"1966",
+            "date_end":""
+		}, 
+		"geometry": { 
+		    "type": "GeometryCollection", 
+                    "geometries": [
+				{ "type": "MultiPolygon", "coordinates": [ [ [ [ -298341.493717230507173, 6192228.604457467794418 ], [ -290107.006109662295785, 6190830.295241088606417 ], [ -288883.485545330273453, 6200230.04052897170186 ], [ -297143.867768016585615, 6201408.245516846887767 ], [ -298341.493717230507173, 6192228.604457467794418 ] ] ] ] },
+				{ "type": "MultiPoint", "coordinates": [ [ -171755, 5975868 ] ] }
+		    ]
+		}
+	},
+	{ 	
+		"type": "Feature", 
+		"properties": { 
+			"id": 41, 
+			"name": "Test intégration du son", 
+			"type":"data",
+            "corpus":"Archives citoyennes",
+            "corpus_code":"c_03",
+            "corpus_map":"c_03",
+            "date_start":"2022",
+            "date_end":""
+		}, 
+		"geometry": { 
+		    "type": "GeometryCollection", 
+                    "geometries": [
+				{ "type": "MultiPolygon", "coordinates": [ [ [ [ -298341.493717230507173, 6192228.604457467794418 ], [ -290107.006109662295785, 6190830.295241088606417 ], [ -288883.485545330273453, 6200230.04052897170186 ], [ -297143.867768016585615, 6201408.245516846887767 ], [ -298341.493717230507173, 6192228.604457467794418 ] ] ] ] },
+				{ "type": "MultiPoint", "coordinates": [ [ -171755, 5975868 ] ] }
+		    ]
+		}
+	}
     ]
 } 
     

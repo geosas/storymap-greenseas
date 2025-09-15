@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <base href="/storymap-greenseas/"></base>
+    <title>Storymap</title>
+    <link rel="stylesheet" href="lib/bootstrap/5.3.3/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap_icons/1.11.3/bootstrap-icons.min.css">
+    <script src="lib/jquery/3.7.1/jquery-3.7.1.min.js"></script>
+    <script src="lib/bootstrap/5.3.3/bootstrap.bundle.min.js"></script>
+    <script src="lib/mustache/4.1.0/mustache.min.js"></script>
+    <script src="lib/papaparse/5.0.2/papaparse.min.js"></script>   
+    <link rel="stylesheet" href="lib/ol/9.2.4/ol.css" type="text/css">    
+    <link rel="stylesheet" href="css/storymap.css" type="text/css">
+    <script src="lib/ol/9.2.4/ol.js"></script>
+    <!-- TODO templates lazy loading" -->
+    <script src="templates/carousel.js"></script>
+    <script src="templates/list.js"></script>
+  </head>
+  <body>
+    <div id="bandeau" ></div>    
+    <div id="map" class="map"></div>
+    <div id="tools" class="btn-group-vertical" role="group" aria-label="Vertical button group" >
+        <button role="button" id="btn-zoomplus" href="#" onclick="ks.menuaction('zoomplus');" title="Zoomer" class="btn btn-light">
+            <i class="bi bi-plus-lg"></i>
+        </button>
+        <button role="button" id="btn-extent" href="#" onclick="ks.menuaction('extent');" title="Revenir à l'étendue initiale" class="btn btn-light">
+            <i class="bi bi-fullscreen"></i>
+        </button>
+        <button role="button" id="btn-zoommoins" href="#" onclick="ks.menuaction('zoommoins');" title="Dézoomer" class="btn btn-light">
+            <i class="bi bi-dash"></i>
+        </button>
+    </div>
+    <div id="menu" class="btn-group-vertical " role="group" aria-label="Vertical button group" >        
+        <button role="button" id="btn-home" href="#" onclick="ks.menuaction('home');" title="Accueil" class="btn btn-light no-visible">
+            <i class="bi bi-house-door"></i>
+        </button>
+    </div>
+    <div  id="content-title" style="display: none;">
+        <h1></h1>
+        <h3></h3>
+    </div>   
+    <div id="feature-info" class="" data-bs-toggle="tooltip" title=""></div>    
+    <div id="template" ></div>     
+    <div  id="splash" style="display: none;"> 
+        <div class="story-btn story-btn-next container px-5" style="opacity: 1;">
+            <a class="btn btn-dark" onclick="$('#splash').fadeOut();$('#content-title').show();">Accéder</a>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="myModalLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">            
+          </div>
+        </div>
+      </div>
+    </div>
+   <!-- IMAGE POPUP -->		
+    <div id="imagepopup" class="modal fade" tabindex="-1" role="dialog" >
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" >
+                    <div class="row">
+                        <figure class="col-md-12">
+                            <img class="img-responsive center-block" src="img/nextButton.png" style="" alt="image">
+                            <figcaption></figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- IFRAME POPUP -->		
+    <div id="iframepopup" class="modal fade" tabindex="-1" role="dialog" >
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" >
+                    <div class="row">
+                        <div class="col-md-12">
+                            <iframe src="" style="height: 400px; width: 100%;" scrolling="no" frameborder="0"></iframe>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- PANEL SHARE -->		
+    <div id="panel-share" class="modal fade" tabindex="-1" role="dialog" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">                    
+                    <h5 class="modal-title">Partager cette storymap</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="iconShare__list mb-3">
+                        <a id="btnShareEmail"><i class="bi bi-envelope"></i><span>E-mail</span></a>
+                        <a onclick="document.querySelector('#blockIframe').classList.toggle('is-hidden');"><i class="bi bi-code"></i><span>Intégrer</span></a>
+                        <a id="btnShareWhatapp" target="_blank"><i class="bi bi-whatsapp"></i><span>WhatsApp</span></a>
+                        <a id="btnShareFacebook" target="_blank"><i class="bi bi-facebook"></i><span>Facebook</span></a>
+                        <a id="btnShareX" target="_blank"><i class="bi bi-twitter-x"></i><span>X</span></a>
+                    </div>
+                    <div id="blockIframe" class="is-hidden">
+                        <div class="mb-2">
+                            <h6>Code d'intégration en iframe</h6>
+                            <button class="btn btn-dark btn-sm" onclick="navigator.clipboard.writeText(document.getElementById('block__IframeUrl').textContent);">Copier</button>
+                        </div>
+                        <div class="textEdit" id="block__IframeUrl" contentEditable></div>                        
+                    </div>
+                    <hr>
+                    <h6>Lien de partage</h6>
+                    <div id="block__ShareLink">
+                        <input id="urlShare__link" type="text" value=""></span>
+                        <button type="button" class="btn btn-dark btn-sm" onclick="navigator.clipboard.writeText(document.getElementById('urlShare__link').value)">Copier</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- PANEL INFOS -->		
+    <div id="panel-infos" class="modal fade" tabindex="-1" role="dialog" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Crédits</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="panelInfos_content" class="mb-2"></div>
+                    <p>Cette application a été réalisée à l'aide de la solution libre <a href="https://github.com/mviewer/storymap" target="_blank">storymap</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/storymap.js"></script>
+  </body>
+</html>
