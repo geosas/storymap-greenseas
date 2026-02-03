@@ -5,13 +5,13 @@ body {
 }
 
 :root{
-    --color-c_01: #2e5465;
-    --color-c_02: #3d7376;
-    --color-c_03: #7fb3b3;
-    --color-c_04: #699574;
-    --color-c_05: #b6d2c5;
-    --color-c_06: #92b49b;
-    --color-c_07: #3a8f98;
+    --color-c_01: #002f43;
+    --color-c_02: #2e5667;
+    --color-c_03: #27778d;
+    --color-c_04: #6bb6b5;
+    --color-c_05: #9ed2c3;
+    --color-c_06: #539e98;
+    --color-c_07: #3e7a77;
     --opacity: 0.5;
 }
 
@@ -303,7 +303,7 @@ h1,h2{
 }
 
 .item h2 {
-    font-weight: 700;
+    font-weight: 500;
     color:var(--colorStorie);
 }
 
@@ -386,7 +386,7 @@ h1,h2{
 }
 
 .slide__item p > a:hover {
-    background-color:color-mix(in srgb, var(--color-c_07) 40%, white);
+    background-color:color-mix(in srgb, var(--color-c_04) 80%, white);
 }
 
 .templateCorpus__header h2 {

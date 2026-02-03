@@ -63,10 +63,7 @@
           <div class="corpus_dataList {{corpus_code}} mt-3" id="corpusDataList_{{corpus_code}}"></div>
         </div>
     </div> 
-    <div class="template__intro">
-        <div class="badge__intro">
-            <span class="item__badge">Chapitre 1</span>
-        </div>        
+    <div class="template__intro">      
         <h1>Comment les "marées vertes" sont-elles documentées ?</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
@@ -106,31 +103,53 @@
 <script>
 
 // Timeline param
-startTimeline = 1945 - 1;
-endTimeline = 2035 + 1;
-numberYears = endTimeline-startTimeline;
+timelineConfig = {
+  startYear: 1920,
+  padding: 1,
+  currentYear: new Date().getFullYear(),
+  get startTimeline() {
+    return this.startYear - this.padding;
+  },
+  get endTimeline() {
+    return this.currentYear + this.padding;
+  },
+  get numberYears() {
+    return this.endTimeline - this.startTimeline;
+  }
+};
 
-// Create timeline
-if (document.getElementById('customTimeline') === null){
-    function createYear(year) {         
-        if (year % 10) {
-            htmlYears += "<div class='timeline__year' data-years=" + year + "><span>" + year + "</span><div class='timelineItems_list'></div></div>";
-        } else {
-            htmlYears += "<div class='timeline__year border' data-years=" + year + "><span>" + year + "</span><div class='timelineItems_list'></div></div>";
-        }
-    }
-    let timelineHtml = `<div class="timeline__block" id="customTimeline" item-type="intro" item-corpus="all"></div>`
-    document.getElementById("template").insertAdjacentHTML("afterend",timelineHtml);
-    let htmlYears = "";    
-    let i = 1 
-    let years=[];
-    while (i < numberYears) {        
-        years.push(startTimeline + i);
-        i = i + 1 
-    }
-    years.forEach(createYear);
-    document.getElementById("customTimeline").innerHTML = htmlYears;    
+function initTimeline() {
+  if (document.getElementById("customTimeline")) return;
+
+  const templateEl = document.getElementById("template");
+  if (!templateEl) return;
+
+  templateEl.insertAdjacentHTML(
+    "afterend",
+    `<div class="timeline__block" id="customTimeline" item-type="intro" item-corpus="all"></div>`
+  );
+
+  const timelineEl = document.getElementById("customTimeline");
+
+  const parts = [];
+  for (
+    let year = timelineConfig.startTimeline + 1;
+    year < timelineConfig.endTimeline;
+    year++
+  ) {
+    const isDecade = year % 10 === 0;
+    parts.push(
+      `<div class="timeline__year${isDecade ? " border" : ""}" data-years="${year}">
+        <span>${year}</span>
+        <div class="timelineItems_list"></div>
+      </div>`
+    );
+  }
+
+  timelineEl.innerHTML = parts.join("");
 }
+
+initTimeline();
 
 // Update daza-actual-slide attribute to btn caroussel
 function slideTo(id) {
@@ -171,7 +190,7 @@ function addDate(date,id) {
 function addPeriode(start,end,id) {
     const timelineWidth = document.querySelector("#customTimeline").offsetWidth;
     let yearsPeriode = end - start +1;
-    let sizeBar= (timelineWidth/numberYears) * yearsPeriode;
+    let sizeBar= (timelineWidth/timelineConfig.numberYears) * yearsPeriode;
     let sizeBarPerc = sizeBar*100/timelineWidth;
     let idItem = document.querySelector(".carousel-indicators button[data-featureid='"+ id +"']");
     let slideItem = idItem.getAttribute("data-bs-slide-to");
@@ -198,49 +217,57 @@ function styleDefault(feature) {
       let iconUrl;
       switch (type) {
         case 'c_01':
-          fillColor = 'rgba(46,84,101,0.6)';
-          strokeColor = 'rgba(46,84,101,0.8)'; 
-          iconUrl = "stories/greenseas/img/icon_map_c01.svg"
-          break;
+            fillColor = 'rgba(0, 47, 67, 0.8)';  // Opacité 0.8
+            strokeColor = 'rgba(0, 47, 67, 0.8)'; // Opacité 0.8 pour le contour
+            iconUrl = "stories/greenseas/img/icon_map_c01.svg";
+            break;
+
         case 'c_02':
-          fillColor = 'rgba(61,115,118,0.6)';
-          strokeColor = 'rgba(61,115,118,0.8)'; 
-          iconUrl = "stories/greenseas/img/icon_map_c02.svg"
-          break;
+            fillColor = 'rgba(46, 86, 103, 0.8)';  // Opacité 0.8
+            strokeColor = 'rgba(46, 86, 103, 0.8)';
+            iconUrl = "stories/greenseas/img/icon_map_c02.svg";
+            break;
+
         case 'c_03':
-          fillColor = 'rgba(127,179,179,0.6)';
-          strokeColor = 'rgba(127,179,179,0.8)'; 
-          iconUrl = "stories/greenseas/img/icon_map_c03.svg"
-          break;
+            fillColor = 'rgba(39, 119, 141, 0.8)';  // Opacité 0.8
+            strokeColor = 'rgba(39, 119, 141, 0.8)';
+            iconUrl = "stories/greenseas/img/icon_map_c03.svg";
+            break;
+
         case 'c_04':
-          fillColor = 'rgba(105,149,116,0.6)';
-          strokeColor = 'rgba(105,149,116,0.8)'; 
-          iconUrl = "stories/greenseas/img/icon_map_c04.svg"
-          break;
+            fillColor = 'rgba(107, 182, 181, 0.8)';  // Opacité 0.8
+            strokeColor = 'rgba(107, 182, 181, 0.8)';
+            iconUrl = "stories/greenseas/img/icon_map_c04.svg";
+            break;
+
         case 'c_05':
-          fillColor = 'rgba(146,180,155,0.6)';
-          strokeColor = 'rgba(146,180,155,0.8)'; 
-          iconUrl = "stories/greenseas/img/icon_map_c05.svg"
-          break;
+            fillColor = 'rgba(158, 210, 195, 0.8)';  // Opacité 0.8
+            strokeColor = 'rgba(158, 210, 195, 0.8)';
+            iconUrl = "stories/greenseas/img/icon_map_c05.svg";
+            break;
+
         case 'c_06':
-          fillColor = 'rgba(182,210,197,0.6)';
-          strokeColor = 'rgba(182,210,197,0.8)';
-          iconUrl = "stories/greenseas/img/icon_map_c06.svg"
-          break;
-        case 'c_07':
-          fillColor = 'rgba(58,143,152,0.6)';
-          strokeColor = 'rgba(58,143,152,0.8)';
-          iconUrl = "stories/greenseas/img/icon_map_c07.svg"
-          break;
+            fillColor = 'rgba(83, 158, 152, 0.8)';  // Opacité 0.8
+            strokeColor = 'rgba(83, 158, 152, 0.8)';
+            iconUrl = "stories/greenseas/img/icon_map_c06.svg";
+            break;
+
+        case 'c_07':          
+            fillColor = 'rgba(62, 122, 119, 0.8)';  // Opacité 0.8
+            strokeColor = 'rgba(62, 122, 119, 0.8)';
+            iconUrl = "stories/greenseas/img/icon_map_c07.svg";
+            break;
+
         case 'none':
-          fillColor = 'rgba(134,235,213,0)';
-          strokeColor = 'rgba(134,235,213,0)';
-          iconUrl = "/"
-          break;
+            fillColor = 'rgba(134, 235, 213, 0)';  // Pas de remplissage
+            strokeColor = 'rgba(134, 235, 213, 0)';
+            iconUrl = "/";
+            break;
+
         default:
-          fillColor = 'rgba(120, 120, 120, 0)';
-          iconUrl = "stories/greenseas/img/icon_map.svg";
-      }
+            fillColor = 'rgba(120, 120, 120, 0)';  // Pas de remplissage
+            iconUrl = "stories/greenseas/img/icon_map.svg";
+    }
 
       return new ol.style.Style({
         fill: new ol.style.Fill({ color: fillColor }),
@@ -256,49 +283,57 @@ function styleWithoutMultiPoint(feature) {
       let iconUrl;
       switch (type) {
         case 'c_01':
-          fillColor = 'rgba(46,84,101,0.6)';
-          strokeColor = 'rgba(46,84,101,0.8)'; 
-          iconUrl = "stories/greenseas/img/icon_map_c01.svg"
-          break;
+            fillColor = 'rgba(0, 47, 67, 0.8)';  // Opacité 0.8
+            strokeColor = 'rgba(0, 47, 67, 0.8)'; // Opacité 0.8 pour le contour
+            iconUrl = "stories/greenseas/img/icon_map_c01.svg";
+            break;
+
         case 'c_02':
-          fillColor = 'rgba(61,115,118,0.6)';
-          strokeColor = 'rgba(61,115,118,0.8)'; 
-          iconUrl = "stories/greenseas/img/icon_map_c02.svg"
-          break;
+            fillColor = 'rgba(46, 86, 103, 0.8)';  // Opacité 0.8
+            strokeColor = 'rgba(46, 86, 103, 0.8)';
+            iconUrl = "stories/greenseas/img/icon_map_c02.svg";
+            break;
+
         case 'c_03':
-          fillColor = 'rgba(127,179,179,0.6)';
-          strokeColor = 'rgba(127,179,179,0.8)'; 
-          iconUrl = "stories/greenseas/img/icon_map_c03.svg"
-          break;
+            fillColor = 'rgba(39, 119, 141, 0.8)';  // Opacité 0.8
+            strokeColor = 'rgba(39, 119, 141, 0.8)';
+            iconUrl = "stories/greenseas/img/icon_map_c03.svg";
+            break;
+
         case 'c_04':
-          fillColor = 'rgba(105,149,116,0.6)';
-          strokeColor = 'rgba(105,149,116,0.8)'; 
-          iconUrl = "stories/greenseas/img/icon_map_c04.svg"
-          break;
+            fillColor = 'rgba(107, 182, 181, 0.8)';  // Opacité 0.8
+            strokeColor = 'rgba(107, 182, 181, 0.8)';
+            iconUrl = "stories/greenseas/img/icon_map_c04.svg";
+            break;
+
         case 'c_05':
-          fillColor = 'rgba(146,180,155,0.6)';
-          strokeColor = 'rgba(146,180,155,0.8)'; 
-          iconUrl = "stories/greenseas/img/icon_map_c05.svg"
-          break;
+            fillColor = 'rgba(158, 210, 195, 0.8)';  // Opacité 0.8
+            strokeColor = 'rgba(158, 210, 195, 0.8)';
+            iconUrl = "stories/greenseas/img/icon_map_c05.svg";
+            break;
+
         case 'c_06':
-          fillColor = 'rgba(182,210,197,0.6)';
-          strokeColor = 'rgba(182,210,197,0.8)';
-          iconUrl = "stories/greenseas/img/icon_map_c06.svg"
-          break;
-        case 'c_07':
-          fillColor = 'rgba(58,143,152,0.6)';
-          strokeColor = 'rgba(58,143,152,0.8)';
-          iconUrl = "stories/greenseas/img/icon_map_c07.svg"
-          break;
+            fillColor = 'rgba(83, 158, 152, 0.8)';  // Opacité 0.8
+            strokeColor = 'rgba(83, 158, 152, 0.8)';
+            iconUrl = "stories/greenseas/img/icon_map_c06.svg";
+            break;
+
+        case 'c_07':          
+            fillColor = 'rgba(62, 122, 119, 0.8)';  // Opacité 0.8
+            strokeColor = 'rgba(62, 122, 119, 0.8)';
+            iconUrl = "stories/greenseas/img/icon_map_c07.svg";
+            break;
+
         case 'none':
-          fillColor = 'rgba(134,235,213,0)';
-          strokeColor = 'rgba(134,235,213,0)';
-          iconUrl = "/"
-          break;
+            fillColor = 'rgba(134, 235, 213, 0)';  // Pas de remplissage
+            strokeColor = 'rgba(134, 235, 213, 0)';
+            iconUrl = "/";
+            break;
+
         default:
-          fillColor = 'rgba(120, 120, 120, 0)';
-          iconUrl = "stories/greenseas/img/icon_map.svg";
-      }
+            fillColor = 'rgba(120, 120, 120, 0)';  // Pas de remplissage
+            iconUrl = "stories/greenseas/img/icon_map.svg";
+    }
 
       return new ol.style.Style({
         fill: new ol.style.Fill({ color: fillColor }),

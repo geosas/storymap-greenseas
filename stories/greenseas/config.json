@@ -1,6 +1,6 @@
 {
   "theme": {
-    "color" : "#253848",
+    "color" : "#002f43",
     "css":"greenseas.css"
   },
   "tooltip": {
@@ -36,79 +36,79 @@
       "field": "corpus_map",
       "values": ["c_01","c_02","c_03","c_04","c_05","c_06","c_07","none"],
       "styles": [
-        {
-          "fill": {
-            "color": "rgba(46,84,101,0.6)"
-          },
-          "stroke": {
-            "color": "rgba(46,84,101,0.8)",
-            "width": 1
-          }
+      {
+        "fill": {
+          "color": "rgba(0,47,67,0.8)"
         },
-        {
-          "fill": {
-            "color": "rgba(61,115,118,0.6)"
-          },
-          "stroke": {
-            "color": "rgba(61,115,118,0.8)",
-            "width": 1
-          }
-        },
-        {
-          "fill": {
-            "color": "rgba(127,179,179,0.6)"
-          },
-          "stroke": {
-            "color": "rgba(127,179,179,0.8)",
-            "width": 1
-          }
-        },
-        {
-          "fill": {
-            "color": "rgba(105,149,116,0.6)"
-          },
-          "stroke": {
-            "color": "rgba(105,149,116,0.8)",
-            "width": 1
-          }
-        },
-        {
-          "fill": {
-            "color": "rgba(146,180,155,0.6)"
-          },
-          "stroke": {
-            "color": "rgba(146,180,155,0.8)",
-            "width": 1
-          }
-        },
-        {
-          "fill": {
-            "color": "rgba(182,210,197,0.6)"
-          },
-          "stroke": {
-            "color": "rgba(182,210,197,0.8)",
-            "width": 1
-          }
-        },
-        {
-          "fill": {
-            "color": "rgba(58,143,152,0.6)"
-          },
-          "stroke": {
-            "color": "rgba(58,143,152,0.8)",
-            "width": 1
-          }
-        },
-        {
-          "fill": {
-            "color": "rgba(37,56,72,0)"
-          },
-          "stroke": {
-            "color": "rgba(37,56,72,0)",
-            "width": 1
-          }
+        "stroke": {
+          "color": "rgba(0,47,67,0.8)",
+          "width": 1
         }
-      ]
+      },
+      {
+        "fill": {
+          "color": "rgba(46,86,103,0.8)"
+        },
+        "stroke": {
+          "color": "rgba(46,86,103,0.8)",
+          "width": 1
+        }
+      },
+      {
+        "fill": {
+          "color": "rgba(39,119,141,0.8)"
+        },
+        "stroke": {
+          "color": "rgba(39,119,141,0.8)",
+          "width": 1
+        }
+      },
+      {
+        "fill": {
+          "color": "rgba(107,182,181,0.8)"
+        },
+        "stroke": {
+          "color": "rgba(107,182,181,0.8)",
+          "width": 1
+        }
+      },
+      {
+        "fill": {
+          "color": "rgba(158,210,195,0.8)"
+        },
+        "stroke": {
+          "color": "rgba(158,210,195,0.8)",
+          "width": 1
+        }
+      },
+      {
+        "fill": {
+          "color": "rgba(83,158,152,0.8)"
+        },
+        "stroke": {
+          "color": "rgba(83,158,152,0.8)",
+          "width": 1
+        }
+      },
+      {
+        "fill": {
+          "color": "rgba(62,122,119,0.8)"
+        },
+        "stroke": {
+          "color": "rgba(62,122,119,0.8)",
+          "width": 1
+        }
+      },
+      {
+        "fill": {
+          "color": "rgba(134,235,213,0)"
+        },
+        "stroke": {
+          "color": "rgba(134,235,213,0)",
+          "width": 1
+        }
+      }
+    ]
     },
     "hightlightstyle": {
       "fill": {
