@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenseas - Apparitions des algues vertes en Bretagne</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+      :root {
+        --nav-height: 70px;
+        --colorGrenseas: #002f43;
+        --colorGrenseas2: #27778d;
+        --colorGrenseas3: #6bb6b5;
+      }
+
+      /* Reset général */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', system-ui;
+      }
+
+      body {
+        line-height: 1.5;
+        font-feature-settings: "liga" 1, "calt" 1;
+      }
+
+      h1 {
+        font-family: "DM Serif Text", serif;
+      }
+
+      /* Navigation */
+      nav {
+        background-color: var(--colorGrenseas);
+        height: var(--nav-height);
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-tabs {
+        display: flex;
+        justify-content: space-around;
+        gap: 6px;
+        width: 100%;
+      }
+
+      nav button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 14px;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 2em;
+        white-space: nowrap;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.35s cubic-bezier(.2, .8, .2, 1);
+      }
+
+      nav button.active {
+        background-color: #fff;
+        font-weight: bold;
+        color: var(--colorGrenseas2);
+        transform: rotate(-3deg);
+      }
+
+      nav button:hover {
+        background-color: #fff;
+        font-weight: bold;
+        color: var(--colorGrenseas2);
+        transform: rotate(-3deg) scale(1.05);
+      }
+
+      /* Contenu principal */
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      @media (max-width: 700px) {
+        nav {
+          padding: 0px 2px;
+        }
+
+        .nav-tabs {
+          justify-content: flex-start;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          gap: 8px;
+          padding-bottom: 6px;
+        }
+
+        .nav-tabs::-webkit-scrollbar {
+          height: 2px;
+        }
+
+        .nav-tabs::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0);
+          border-radius: 999px;
+        }
+
+        .nav-tabs::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        h1.hero-title {
+          font-size: 4em;
+        }
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* HERO plein écran */
+      .hero {
+        min-height: calc(100vh - var(--nav-height));
+        background-color: var(--colorGrenseas);
+        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 5;
+        max-width: 780px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 4rem 1rem 12rem;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+      }
+
+      /* Décor bas (algues) */
+      .hero-bottom {
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .hero-bottom .hero-layer {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .hero-bottom .hero-layer--mid {
+        width: 105%;
+        transform: translateX(-50%);
+        opacity: 0.25;
+        filter: blur(0.4px);
+        transform-origin: bottom center;
+        animation: sway 10s ease-in-out infinite;
+      }
+
+      .hero-bottom .hero-layer--center {
+        width: 100%;
+        transform: translateX(-50%);
+        height: auto;
+        object-fit: contain;
+        z-index: 3;
+      }
+
+      @media (max-width: 700px) {
+        .hero-inner {
+          padding: 3.5rem 1rem 13rem;
+        }
+
+        .hero-bottom {
+          height: 40vh;
+        }
+
+        .hero-bottom .hero-layer--mid,
+        .hero-bottom .hero-layer--center {
+          width: 160%;
+        }
+      }
+
+      .hero-title {
+        font-weight: 100;
+        font-size: clamp(20px, 4vw, 4vw);
+        letter-spacing: -0.02em;
+        line-height: 1;
+      }
+
+      .hero-subtitle {
+        font-size: clamp(20px, 2vw, 21px);
+        opacity: 0.95;
+        max-width: 60ch;
+      }
+
+      .hero-cta {
+        margin-top: 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 3em;
+        padding: 18px 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        background: #fff;
+        color: var(--colorGrenseas);
+        transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+      }
+
+      .hero-cta__secondary {
+        background: var(--colorGrenseas3);
+        color: #fff;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .hero-cta__secondary svg {
+        border: 2px solid white;
+        border-radius: 2em;
+        padding: 0px;
+        transition: transform 0.25s ease
+      }
+
+      .hero-cta__secondary:hover svg {
+        transform: translateX(5px);
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 15px;
+      }
+
+      .hero-cta:hover {
+        transform: translateY(-2px);
+      }
+
+      .hero-cta:active {
+        transform: translateY(0);
+      }
+
+      .tab-container {
+        padding: 3em 1em;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      p {
+        font-size: 17px;
+        margin-bottom: 1em;
+      }
+
+      h2 {
+        font-size: 2em;
+        color: var(--colorGrenseas);
+        margin-bottom: .5em;
+      }
+
+      .center {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @keyframes sway {
+        0% {
+          transform: translateX(-50%) rotate(-1.5deg) translateY(0);
+        }
+
+        50% {
+          transform: translateX(-50%) rotate(1.8deg) translateY(-8px);
+        }
+
+        100% {
+          transform: translateX(-50%) rotate(-1.5deg) translateY(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-layer {
+          animation: none !important;
+        }
+      }
+
+      /* Carte - iframe */
+      .tab-content--map {
+        padding: 0;
+        margin: 0;
+        height: calc(100vh - var(--nav-height));
+      }
+
+      .tab-content--map iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-tabs">
+        <button class="tab-button active" data-tab="tab1">Avant-propos</button>
+        <button class="tab-button" data-tab="tab2">Chapitre 1</button>
+        <button class="tab-button" data-tab="tab3">Chapitre 2</button>
+        <button class="tab-button" data-tab="tab4">Chapitre 3</button>
+        <button class="tab-button" data-tab="tab5">Synthèse</button>
+      </div>
+    </nav>
+    <!-- Contenu -->
+    <main>
+      <div id="tab1" class="tab-content active">
+        <!-- HERO (plein écran) -->
+        <section class="hero">
+          <div class="hero-inner">
+            <h1 class="hero-title">ApparitionS <br>des algues vertes <br> en Bretagne </h1>
+            <p class="hero-subtitle"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <div class="hero-actions">
+              <button class="hero-cta hero-cta__secondary" type="button" data-go-tab="tab2"> Démarrer <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                </svg>
+              </button>
+              <button class="hero-cta" type="button" data-scroll-target="#tab1-more"> En savoir plus </button>
+            </div>
+          </div>
+          <div class="hero-bottom">
+              <img class="hero-layer hero-layer--mid" src="algue_mid.svg" alt="" aria-hidden="true">
+              <img class="hero-layer hero-layer--center" src="algues.svg" alt="" aria-hidden="true">
+          </div>
+        </section>
+        <section id="tab1-more" class="tab-container tab1-more">
+          <h2>Le projet GreenSeas</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+          <h2>Les enjeux</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+          <h2>Les partenaires</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+          <div class="center">
+            <button class="hero-cta hero-cta__secondary" type="button" data-go-tab="tab2"> Démarrer <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+              </svg>
+            </button>
+          </div>
+        </section>
+      </div>
+      <div id="tab2" class="tab-content tab-content--map">
+            <iframe src="http://localhost/storymap-greenseas/greenseas/" loading="lazy" aria-label="Carte interactive"></iframe>
+        </div>
+      <div id="tab3" class="tab-container tab-content">
+        <h2>Storymap CH2</h2>
+      </div>
+      <div id="tab4" class="tab-container tab-content">
+        <h2>Storymap CH3</h2>
+      </div>
+      <div id="tab5" class="tab-content">
+        <section class="tab1-more tab-container">
+          <h2>Synthèse</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+        </section>
+      </div>
+    </main>
+    <!-- JS -->
+    <script>
+      const buttons = document.querySelectorAll('.tab-button');
+      const contents = document.querySelectorAll('.tab-content');
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          buttons.forEach(btn => btn.classList.remove('active'));
+          contents.forEach(content => content.classList.remove('active'));
+          button.classList.add('active');
+          const tabId = button.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+          button.scrollIntoView({
+            behavior: 'smooth',
+            inline: 'center',
+            block: 'nearest'
+          });
+        });
+      });
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-scroll-target]');
+        if (!btn) return;
+        document.querySelector(btn.dataset.scrollTarget)?.scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+      document.addEventListener('click', (e) => {
+        const goTabBtn = e.target.closest('[data-go-tab]');
+        if (!goTabBtn) return;
+        const targetTabId = goTabBtn.dataset.goTab;
+        const targetButton = document.querySelector(`.tab-button[data-tab="${targetTabId}"]`);
+        targetButton?.click();
+      });
+    </script>
+  </body>
+</html>
