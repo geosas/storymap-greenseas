@@ -1,0 +1,400 @@
+{{#id}}
+<div class="container-fluid slideItem_{{type}} slide__item mt-4" id="slide_{{id}}" item-type="{{type}}" item-corpus="{{zoom_code}}" item-insee="{{code_insee}}">   
+    <button id="btn__homeStory" onclick="goToSlide(1);">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13 19H19V9.97815L12 4.53371L5 9.97815V19H11V13H13V19ZM21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20Z"></path></svg>
+    </button>
+    <!-- NIV 3 - DATA -->
+    <div class="template__data corpus_{{zoom_code}}">
+        <span class="item__badge">{{zoom}}</span>
+        <h2 class="my-3">{{name}}</h2> 
+        <div class="tplData_metadata">
+          {{#date_production}}
+          <div class="data_metada">
+            <div class="metadata_title">Date de production ou de collecte</div>
+            <p>{{date_production}}</p>
+          </div>
+          {{/date_production}}
+          {{#date_info}}
+          <div class="data_metada">
+            <div class="metadata_title">Date de l'information collectée</div>
+            <p>{{date_info}}</p>
+          </div>
+          {{/date_info}}
+          {{#source_auteur}}
+          <div class="data_metada">
+            <div class="metadata_title">Source(s) / Auteur(s)</div>
+            {{#url_source}}
+              <p><a target="_blank" href="{{url_source}}">{{source_auteur}}</a></p>
+            {{/url_source}}
+            {{^url_source}}
+              <p>{{source_auteur}}</p>
+            {{/url_source}}
+          </div>
+          {{/source_auteur}}
+          {{#lieu}}
+          <div class="data_metada">
+            <div class="metadata_title">Lieu</div>
+            <p>{{lieu}}</p>
+          </div>
+          {{/lieu}}
+        </div>  
+        {{#id_img}}
+        <div class="tplData_img">
+            <img src="stories/greenseas_ch2/corpus_doc/{{id_img}}" class="img-fluid" alt="{{name}}" id="image_{{id}}">
+            <a class="img__btnOpen" target="_blank" href="stories/greenseas_ch2/corpus_doc/{{id_img}}" title="Ouvrir en plein écran">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 8.41421V12L5 12L5 5L12 5V7L8.41421 7L17 15.5858V12L19 12L19 19H12V17H15.5858L7 8.41421Z"></path></svg>
+            </a>
+        </div>
+        {{/id_img}} 
+        {{#id_son}}
+        <div class="tplData_sound">
+          <audio controls src="stories/greenseas_ch2/corpus_doc/{{id_son}}" controls autoplay muted></audio>
+        </div>
+        {{/id_son}}  
+        {{#id_doc}}
+        <div class="tplData_doc my-3">
+            <a target="_blank" href="stories/greenseas_ch2/corpus_doc/{{id_doc}}" class="btn btn__doc">
+              <span>Consulter le document</span> 
+            </a>
+        </div>
+        {{/id_doc}}   
+        <p>{{{texte}}}</p> 
+    </div> 
+    <!-- NIV 2 - ZOOM -->
+    <div class="template__zoom" style="background-color:var(--color-n2)">
+        <div class="templateZoom__header" >
+          <div><img src="stories/greenseas_ch2/img/icon_zoom_{{zoom_code}}.svg"/></div>
+          <h2>{{name}}</h2> 
+        </div>  
+        <div class="templateZoom__body">  
+          <div>
+            {{{texte}}}
+          </div>  
+          <h4>Documents associés</h4>
+          <div class="corpus_dataList {{zoom_code}} mt-3" id="corpusDataList_{{zoom_code}}"></div>
+        </div>
+    </div> 
+    <!-- NIV 1 - INTRO -->
+    <div class="template__intro">      
+        <h1>Quand et où les « marées vertes » sont-elles apparues ?</h1>
+        <section>
+          <p>
+            Ce chapitre propose dans un premier temps une lecture régionale des données issues des enquêtes de ramassage
+            (cf corpus caractérisé). L’ambition est d’identifier les régularités, les contrastes et les dynamiques
+            territoriales qui se dégagent de l’agrégation des observations collectées.
+          </p>
+
+          <p>
+            Le second objectif consiste à mettre en œuvre une analyse croisée de l’ensemble des sources disponibles.
+            Les données quantitatives et qualitatives issues des enquêtes sont confrontées à des matériaux hétérogènes
+            (photographies, entretiens et témoignages, archives citoyennes, publiques et de presse, expertises scientifiques),
+            afin de construire des interprétations plus étayées et contextualisées. Cette triangulation des sources répond à
+            une exigence méthodologique centrale : renforcer la robustesse des résultats en croisant les régimes de preuve et
+            en confrontant les traces matérielles, discursives et administratives.
+          </p>
+
+          <p>L’analyse se concentre sur trois territoires sélectionnés :</p>
+
+          <ul>
+            <li>Baie de Douarnenez à travers la commune de Plonévez-Porzay</li>
+            <li>Baie de St Brieuc à travers la commune de Hillion</li>
+            <li>Baie de la Forêt à travers la commune de La Forêt-Fouesnant</li>
+          </ul>
+
+          <p>
+            Ce choix méthodologique vise à éclairer la manière dont les configurations locales influencent à la fois la
+            production des données d’enquête et les dynamiques observées. La mise en regard des résultats des enquêtes
+            communales de ramassage avec les autres corpus documentaires offre ainsi un cadre d’évaluation critique de la
+            fiabilité du dispositif d’enquête : elle permet d’identifier les convergences, de qualifier les écarts et de
+            documenter les éventuels biais.
+          </p>
+        </section>
+        <div id="corpusCardsList">            
+            <a type="button" onclick="goToSlide(10);" class="corpus__card" style="background-color:var(--color-n2)">
+                <div><img src="stories/greenseas_ch2/img/icon_zoom_n_01.svg"/></div>
+                <div class="corpus__cardTitle">Résultats de l’analyse des enquêtes communales</div>
+            </a>
+            <a type="button" onclick="goToSlide(20);" class="corpus__card" style="background-color:var(--color-n2)">
+                <div><img src="stories/greenseas_ch2/img/icon_zoom_n_02.svg"/></div>
+                <div class="corpus__cardTitle">Zoom sur Hillion</div>
+            </a>
+            <a type="button" onclick="goToSlide(30);" class="corpus__card" style="background-color:var(--color-n2)">
+                <div><img src="stories/greenseas_ch2/img/icon_zoom_n_02.svg"/></div>
+                <div class="corpus__cardTitle">Zoom sur Baie de Douarnenez</div>
+            </a>
+            <a type="button" onclick="goToSlide(40);" class="corpus__card" style="background-color:var(--color-n2)">
+                <div><img src="stories/greenseas_ch2/img/icon_zoom_n_02.svg"/></div>
+                <div class="corpus__cardTitle">Zoom sur Baie de la Forêt</div>
+            </a> 
+        </div>
+    </div>      
+</div>
+
+<script>
+
+// Timeline param
+timelineConfig = {
+  startYear: 1920,
+  padding: 1,
+  currentYear: new Date().getFullYear(),
+  get startTimeline() {
+    return this.startYear - this.padding;
+  },
+  get endTimeline() {
+    return this.currentYear + this.padding;
+  },
+  get numberYears() {
+    return this.endTimeline - this.startTimeline;
+  }
+};
+
+function initTimeline() {
+  if (document.getElementById("customTimeline")) return;
+
+  const templateEl = document.getElementById("template");
+  if (!templateEl) return;
+
+  templateEl.insertAdjacentHTML(
+    "afterend",
+    `<div class="timeline__block" id="customTimeline" item-type="intro" item-corpus="all"></div>`
+  );
+
+  const timelineEl = document.getElementById("customTimeline");
+
+  const parts = [];
+  for (
+    let year = timelineConfig.startTimeline + 1;
+    year < timelineConfig.endTimeline;
+    year++
+  ) {
+    const isDecade = year % 10 === 0;
+    parts.push(
+      `<div class="timeline__year${isDecade ? " border" : ""}" data-years="${year}">
+        <span>${year}</span>
+        <div class="timelineItems_list"></div>
+      </div>`
+    );
+  }
+
+  timelineEl.innerHTML = parts.join("");
+}
+
+initTimeline();
+
+function initMap() {
+
+  mapStory = ks.mapStorie();
+
+  if (window.wfsLayer) {
+    return;
+  }
+
+  const wfsUrl =
+    "https://geosas.fr/geoserver/wfs?" +
+    "service=WFS&version=2.0.0&request=GetFeature" +
+    "&typeName=greenseas:enquete_communale_AV_bretagne" +
+    "&outputFormat=application/json" +
+    "&srsName=EPSG:3857";
+
+  const wfsSource = new ol.source.Vector({
+    format: new ol.format.GeoJSON(),
+    url: wfsUrl
+  });
+
+  const style1982_83 = new ol.style.Style({
+    fill: new ol.style.Fill({ color: "rgba(36, 75, 90, 0.8)" }),
+    stroke: new ol.style.Stroke({ color: "white", width: 1 })
+  });
+
+  const style1984_86 = new ol.style.Style({
+    fill: new ol.style.Fill({ color: "rgba(47, 111, 132, 0.8)" }),
+    stroke: new ol.style.Stroke({ color: "white", width: 1 })
+  });
+
+  const style1987_91 = new ol.style.Style({
+    fill: new ol.style.Fill({ color: "rgba(63, 143, 151, 0.8)" }),
+    stroke: new ol.style.Stroke({ color: "white", width: 1 })
+  });
+
+  const style1992_96 = new ol.style.Style({
+    fill: new ol.style.Fill({ color: "rgba(99, 178, 176, 0.8)" }),
+    stroke: new ol.style.Stroke({ color: "white", width: 1 })
+  });
+
+  const style1997_03 = new ol.style.Style({
+    fill: new ol.style.Fill({ color: "rgba(185, 230, 221, 0.8)" }),
+    stroke: new ol.style.Stroke({ color: "white", width: 1 })
+  });
+
+  const styleDefault = new ol.style.Style({
+    fill: new ol.style.Fill({ color: "rgba(200,200,200,0)" }),
+    stroke: new ol.style.Stroke({ color: "rgba(200,200,200,0)", width: 0 })
+  });
+
+
+  // Fonction de style
+  function styleBySignal(feature) {
+    const year = feature.get("signal");
+
+    if (year >= 1982 && year <= 1983) return style1982_83;
+    if (year >= 1984 && year <= 1986) return style1984_86;
+    if (year >= 1987 && year <= 1991) return style1987_91;
+    if (year >= 1992 && year <= 1996) return style1992_96;
+    if (year >= 1997 && year <= 2003) return style1997_03;
+
+    return styleDefault;
+  }
+
+   window.wfsLayer = new ol.layer.Vector({
+    source: wfsSource,
+    style: styleBySignal
+  });
+
+  mapStory.addLayer( window.wfsLayer);
+  window.wfsLayer.setZIndex(1);
+
+  mapStory.getAllLayers().forEach(layer => {
+        if (layer.get('name') === 'data_app') {
+            layer.setZIndex(2);
+        }
+  });
+}
+
+initMap();
+
+function applyInseeFilter(inseeCodes) {
+
+  if (!window.wfsLayer) {
+    console.warn("La couche WFS n'est pas encore chargée.");
+    return;
+  }
+  let codes;
+
+  if (Array.isArray(inseeCodes)) {
+    codes = inseeCodes;
+  } else {
+    codes = inseeCodes
+      .toString()
+      .split(",")
+      .map(code => code.trim())
+      .filter(code => code.length > 0);
+  }
+// Si les codes sont vides ou null, on supprime le CQL_FILTER
+  let newUrl = "https://geosas.fr/geoserver/wfs?" +
+    "service=WFS&version=2.0.0&request=GetFeature" +
+    "&typeName=greenseas:enquete_communale_AV_bretagne" +
+    "&outputFormat=application/json" +
+    "&srsName=EPSG:3857";
+
+  if (codes && codes.length > 0) {
+    const cql = `INSEE IN ('${codes.join("','")}')`; 
+    newUrl += "&CQL_FILTER=" + encodeURIComponent(cql);
+  }
+
+  // Mise à jour de l'URL de la source WFS
+  const source = window.wfsLayer.getSource();
+  source.setUrl(newUrl);
+  source.refresh();
+}
+
+// Update daza-actual-slide attribute to btn caroussel
+function slideTo(id) {
+    const btnCaroussel = document.querySelectorAll(".carButton a"); 
+    btnCaroussel.forEach(element => {
+        element.setAttribute("data-actual-slide", id);
+        
+    });
+}
+
+// Function change slide 
+function goToSlide(id){
+    const featureId = document.querySelector(`#myCarousel .carousel-indicators button[data-featureid="${id}"]`);
+    if (!featureId) {
+        console.error('Le bouton correspondant à cet ID n\'a pas été trouvé.');
+        return;
+    }
+
+    const slideId = parseInt(featureId.getAttribute("data-bs-slide-to"), 10);
+    
+    if (isNaN(slideId)) {
+        console.error('L\'ID du slide n\'est pas valide.');
+        return;
+    }
+    $('.carousel').carousel(slideId);
+    slideTo(slideId);
+}
+
+// Create point for data
+function addDate(date,id) {
+    let idItem = document.querySelector(".carousel-indicators button[data-featureid='"+ id +"']");
+    let slideItem = idItem.getAttribute("data-bs-slide-to");
+    div = document.querySelector("#customTimeline .timeline__year[data-years='" + date + "'] .timelineItems_list");
+    div.innerHTML += `<div class='timeline__item time__{{zoom_code}}' id='timelineItem__{{id}}'><a type='button' onclick="$('.carousel').carousel(${slideItem});slideTo(${slideItem});"><div class='timeline__itemPoint' ><div class='timeline__itemHover'>{{name}}</div></div></a></div>`;
+};  
+
+// Create bar for corpus
+function addPeriode(start,end,id) {
+    const timelineWidth = document.querySelector("#customTimeline").offsetWidth;
+    let yearsPeriode = end - start +1;
+    let sizeBar= (timelineWidth/timelineConfig.numberYears) * yearsPeriode;
+    let sizeBarPerc = sizeBar*100/timelineWidth;
+    let idItem = document.querySelector(".carousel-indicators button[data-featureid='"+ id +"']");
+    let slideItem = idItem.getAttribute("data-bs-slide-to");
+    div = document.querySelector("#customTimeline .timeline__year[data-years='" + start + "'] .timelineItems_list");
+    div.innerHTML += `<div class='timeline__item time__{{zoom_code}}' id='timelineItem__{{id}}'><a type='button' onclick="$('.carousel').carousel(${slideItem});slideTo(${slideItem});"><div class='timeline__itemPeriode' style='width:${sizeBarPerc}%!important'><div class='timeline__itemHover'>{{name}}</div></div></a></div>`;        
+};
+
+{{#date_end}}
+    addPeriode({{date_start}},{{date_end}},{{id}});
+{{/date_end}}
+{{^date_end}}
+    {{#date_start}}
+        addDate({{date_start}},{{id}});
+    {{/date_start}}
+{{/date_end}}
+
+// Event change item 
+$('.carousel').on('slide.bs.carousel', function (e) {
+    // Type of item
+    let currentItemType = e.relatedTarget.firstChild.nextSibling.getAttribute("item-type");
+    let currentItemCorpus = e.relatedTarget.firstChild.nextSibling.getAttribute("item-corpus");
+    let currentItemInsee = e.relatedTarget.firstChild.nextSibling.getAttribute("item-insee");
+    let timeline = document.querySelector("#customTimeline");
+    timeline.setAttribute("item-type", currentItemType);
+    timeline.setAttribute("item-corpus", currentItemCorpus);
+    applyInseeFilter(currentItemInsee);
+    // Add active class to item timeline
+    let timelineActiv = document.querySelector(".timeline__active");
+    if(timelineActiv){
+        timelineActiv.classList.remove("timeline__active");
+    }    
+    if(currentItemType != "intro"){
+        let currentItemId = e.relatedTarget.attributes["data-featureid"].value;
+        let currentItemDate = document.querySelector("#timelineItem__"+ currentItemId +"")
+        currentItemDate.classList.add("timeline__active");
+    }    
+});
+
+// Get data for each corpus 
+if("{{type}}" === "zoom"){
+  var urlCsvData = "stories/greenseas_ch2/greenseas_info_ch2.csv";
+  Papa.parse(urlCsvData, {
+    header: true,
+    download: true,
+    complete: function(results) {       
+      const corpus_id = "{{zoom_code}}"
+      const filteredData = results.data.filter(item => item.id_zoom === corpus_id && item.niveau === "3");
+      const fdiv = document.getElementById('corpusDataList_{{zoom_code}}');
+      filteredData.forEach(item => {  // Ajouter le titre à la div
+        let cardFeature = `
+        <a type="button" onclick="goToSlide(${item.id_story});" class="corpus__card">
+                <div class="corpus__cardTitle">${item.titre}</div>
+            </a>
+        `;
+        fdiv.insertAdjacentHTML( 'beforeend', cardFeature );  // Ajouter la div au conteneur parent
+      });
+    },
+  });      
+}
+</script>
+{{/id}}

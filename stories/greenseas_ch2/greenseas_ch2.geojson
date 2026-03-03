@@ -1,0 +1,197 @@
+{
+  "type": "FeatureCollection",
+  "name": "data",
+  "crs": { 
+    "type": "name", 
+    "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } 
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "name": "Résultats de l’analyse des enquêtes communales",
+        "type": "zoom",
+        "zoom": "Résultats de l’analyse des enquêtes communales",
+        "zoom_code": "n_01",
+        "zoom_map": "none",
+        "date_start": "1960",
+        "date_end": "2026"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [-625146.967085265903734, 6273882.110133242793381],
+              [-76842.648963098530658, 6289090.551073857583106],
+              [-70439.094882839592174, 5970513.735580977983773],
+              [-633951.853945621871389, 5980119.066701366566122],
+              [-625146.967085265903734, 6273882.110133242793381]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1,
+        "name": "Introduction",
+        "type": "intro",
+        "zoom": "all",
+        "zoom_code": "all",
+        "zoom_map": "none",
+        "date_start": null,
+        "date_end": null
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [-644357.62932604260277, 6277884.331433404237032],
+              [-64835.985062613151968, 6296294.549414148554206],
+              [-59232.875242386595346, 5966511.514280815608799],
+              [-638754.519505816046149, 5965711.070020783692598],
+              [-644357.62932604260277, 6277884.331433404237032]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 20,
+        "name": "Zoom sur Hillion",
+        "type": "zoom",
+        "zoom": "Zoom sur Hillion",
+        "zoom_code": "n_02",
+        "zoom_map": "none",
+        "date_start": "1987",
+        "date_end": "2024"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [-305769.707332354097161, 6201867.140613454394042],
+              [-287309.461585357377771, 6201742.071197823621333],
+              [-287509.572650365473237, 6182731.520022055134177],
+              [-306420.068293630378321, 6183131.742152071557939],
+              [-305769.707332354097161, 6201867.140613454394042]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 30,
+        "name": "Zoom sur Baie de Douarnenez",
+        "type": "zoom",
+        "zoom": "Zoom sur Baie de Douarnenez",
+        "zoom_code": "n_03",
+        "zoom_map": "none",
+        "date_start": "1978",
+        "date_end": "2021"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [-539549.459028060780838, 6160369.108507399447262],
+              [-437993.093536452855915, 6160068.941909887827933],
+              [-436892.482678908330854, 6096633.734302321448922],
+              [-552356.567188578890637, 6095032.845782256685197],
+              [-539549.459028060780838, 6160369.108507399447262]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 40,
+        "name": "Zoom sur Baie de la Forêt",
+        "type": "zoom",
+        "zoom": "Zoom sur Baie de la Forêt",
+        "zoom_code": "n_04",
+        "zoom_map": "none",
+        "date_start": "1964",
+        "date_end": "2000"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [-472812.418847861175891, 6118946.118050725199282],
+              [-401672.935237483587116, 6117045.062933147884905],
+              [-411578.432955384254456, 6059813.298340832814574],
+              [-476314.362485502846539, 6061314.131328393705189],
+              [-472812.418847861175891, 6118946.118050725199282]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 21,
+        "name": "Exemple de document associé à Hillion – 21",
+        "type": "data",
+        "zoom": "Zoom sur Hillion",
+        "zoom_code": "n_02",
+        "zoom_map": "n_data",
+        "date_start": "1985",
+        "date_end": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-288099.86, 6186511.17]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 31,
+        "name": "Exemple de document associé à la Baie de Douarnenez – 31",
+        "type": "data",
+        "zoom": "Zoom sur Baie de Douarnenez",
+        "zoom_code": "n_03",
+        "zoom_map": "n_data",
+        "date_start": "1986",
+        "date_end": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-467639.49, 6123622.74]
+      }
+    }
+    ,
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 41,
+        "name": "Exemple de document associé à la Baie de la Forêt – 41",
+        "type": "data",
+        "zoom": "Zoom sur Baie de la Forêt",
+        "zoom_code": "n_04",
+        "zoom_map": "n_data",
+        "date_start": "2003",
+        "date_end": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-430253.47, 6089657.68]
+      }
+    }
+  ]
+}

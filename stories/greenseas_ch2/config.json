@@ -1,0 +1,77 @@
+{
+  "theme": {
+    "color" : "#002f43",
+    "css":"greenseas.css"
+  },
+  "tooltip": {
+    "fields": [
+      "nom","date_creation"
+    ],
+    "template":"{{name}}"
+  },
+  "map": {
+		"center": [-227028,6182514],
+		"zoom": 15,
+    "width": "100%",
+    "overview": false,
+    "url": "http://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+    "animation": true
+  },
+  "data": {
+    "template": {
+      "name": "carousel",
+      "size": "50%"
+    },
+    "url": "stories/greenseas_ch2/greenseas_ch2.geojson",
+    "orderby": "id",
+    "fields": [
+      {
+        "name": "id"
+      }
+    ],
+    "id": "id",
+    "tpl": "stories/greenseas_ch2/greenseas_ch2.mst",
+    "analyse": {
+      "type": "categories",
+      "field": "zoom_map",
+      "values": ["none", "n_data"],
+      "styles": [
+      {
+        "fill": {
+          "color": "rgba(134,235,213,0)"
+        },
+        "stroke": {
+          "color": "rgba(134,235,213,0)",
+          "width": 1
+        }
+      }, 
+      {
+        "fill": {
+          "color": "rgba(0,47,67,0.8)"
+        },
+        "stroke": {
+          "color": "rgba(0,47,67,0.8)",
+          "width": 1
+        }
+      }
+    ]
+    },
+    "hightlightstyle": {
+      "fill": {
+        "color": "rgba(37,56,72,0)"
+      },
+      "icon": {
+        "src" : "stories/greenseas_ch2/img/icon_mapSelect.svg",
+        "scale" : 0.35
+      },
+      "stroke": {
+        "color": "rgba(37,56,72,0)",
+        "width": 2
+      }
+    }
+  },
+  "extradata": {
+    "url": "greenseas_info_ch2.csv",
+    "linkfield": "id_story"
+  }
+}
