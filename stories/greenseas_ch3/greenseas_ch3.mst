@@ -1,0 +1,328 @@
+{{#id}}
+<div class="container-fluid slideItem_{{type}} slide__item mt-4" id="slide_{{id}}" item-type="{{type}}" item-corpus="{{pers_code}}">   
+    <button id="btn__homeStory" onclick="goToSlide(1);" title="Revenir à l'accueil du chapitre">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13 19H19V9.97815L12 4.53371L5 9.97815V19H11V13H13V19ZM21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20Z"></path></svg>
+    </button>
+    <div class="template__data corpus_{{pers_code}}">
+        <span class="item__badge">{{pers}}</span>
+        <h2 class="my-3">{{name}}</h2> 
+        <div>
+            {{#id_img}}
+              <div class="tplData_img my-3">
+                  <img src="stories/greenseas_ch3/corpus_doc/{{id_img}}" class="img-fluid" alt="{{name}}" id="image_{{id}}">
+                  <a class="img__btnOpen" target="_blank" href="stories/greenseas_ch3/corpus_doc/{{id_img}}" title="Ouvrir en plein écran">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 8.41421V12L5 12L5 5L12 5V7L8.41421 7L17 15.5858V12L19 12L19 19H12V17H15.5858L7 8.41421Z"></path></svg>
+                  </a>
+              </div>
+              {{/id_img}} 
+              {{#id_son}}
+              <div class="tplData_sound my-3">
+                <audio controls src="stories/greenseas_ch3/corpus_doc/{{id_son}}" controls autoplay muted></audio>
+              </div>
+              {{/id_son}}  
+              {{#id_doc}}
+              <div class="tplData_doc my-3">
+                  <a target="_blank" href="stories/greenseas_ch3/corpus_doc/{{id_doc}}" class="btn btn__doc">
+                    <span>Consulter le document</span> 
+                  </a>
+              </div>
+              {{/id_doc}} 
+              {{{texte}}}  
+          </div>
+    </div> 
+    <div class="template__pers" style="background-color:var(--color-{{pers_code}})">
+        <div class="templatePers__header" >
+          <div><img src="stories/greenseas_ch3/img/icon_corpus_{{pers_code}}.svg"/></div>
+          <h2>{{name}}</h2> 
+        </div>  
+        <div class="templatePers__body">  
+          <div>         
+              {{{texte}}}
+          </div>  
+          <div class="corpus_dataList {{pers_code}} mt-3" id="corpusDataList_{{pers_code}}"></div>
+        </div>
+    </div> 
+    <div class="template__intro">      
+        <h1>Comment le terme « marées vertes » est-il apparu ?</h1>
+        {{{texte}}}
+        <div id="corpusCardsList" class="my-4">  
+            <a type="button" onclick="goToSlide(10);" class="corpus__card" style="background-color:var(--color-p_01)">
+                <div><img src="stories/greenseas_ch3/img/icon_corpus_p_01.svg"/></div>
+                <div class="corpus__cardTitle">Gestionnaires</div>
+            </a>
+            <a type="button" onclick="goToSlide(20);" class="corpus__card" style="background-color:var(--color-p_02)">
+                <div><img src="stories/greenseas_ch3/img/icon_corpus_p_02.svg"/></div>
+                <div class="corpus__cardTitle">Scientifiques</div>
+            </a>
+            <a type="button" onclick="goToSlide(30);" class="corpus__card" style="background-color:var(--color-p_03)">
+                <div><img src="stories/greenseas_ch3/img/icon_corpus_p_03.svg"/></div>
+                <div class="corpus__cardTitle">Journalistes </div>
+            </a>            
+            <a type="button" onclick="goToSlide(40);" class="corpus__card" style="background-color:var(--color-p_04)">
+                <div><img src="stories/greenseas_ch3/img/icon_corpus_p_04.svg"/></div>
+                <div class="corpus__cardTitle">Militants</div>
+            </a>
+            <a type="button" onclick="goToSlide(50);" class="corpus__card" style="background-color:var(--color-p_05)">
+                <div><img src="stories/greenseas_ch3/img/icon_corpus_p_05.svg"/></div>
+                <div class="corpus__cardTitle">Habitants</div>
+            </a> 
+        </div>
+    </div>      
+</div>
+
+<script>
+
+// Timeline param
+timelineConfig = {
+  startYear: 1920,
+  padding: 1,
+  currentYear: new Date().getFullYear(),
+  get startTimeline() {
+    return this.startYear - this.padding;
+  },
+  get endTimeline() {
+    return this.currentYear + this.padding;
+  },
+  get numberYears() {
+    return this.endTimeline - this.startTimeline;
+  }
+};
+
+function initTimeline() {
+  if (document.getElementById("customTimeline")) return;
+
+  const templateEl = document.getElementById("template");
+  if (!templateEl) return;
+
+  templateEl.insertAdjacentHTML(
+    "afterend",
+    `<div class="timeline__block" id="customTimeline" item-type="intro" item-corpus="all"></div>`
+  );
+
+  const timelineEl = document.getElementById("customTimeline");
+
+  const parts = [];
+  for (
+    let year = timelineConfig.startTimeline + 1;
+    year < timelineConfig.endTimeline;
+    year++
+  ) {
+    const isDecade = year % 10 === 0;
+    parts.push(
+      `<div class="timeline__year${isDecade ? " border" : ""}" data-years="${year}">
+        <span>${year}</span>
+        <div class="timelineItems_list"></div>
+      </div>`
+    );
+  }
+
+  timelineEl.innerHTML = parts.join("");
+}
+
+initTimeline();
+
+// Update daza-actual-slide attribute to btn caroussel
+function slideTo(id) {
+    const btnCaroussel = document.querySelectorAll(".carButton a"); 
+    btnCaroussel.forEach(element => {
+        element.setAttribute("data-actual-slide", id);        
+    });
+}
+
+// Function change slide 
+function goToSlide(id){
+    const featureId = document.querySelector(`#myCarousel .carousel-indicators button[data-featureid="${id}"]`);
+    if (!featureId) {
+        console.error('Le bouton correspondant à cet ID n\'a pas été trouvé.');
+        return;
+    }
+
+    const slideId = parseInt(featureId.getAttribute("data-bs-slide-to"), 10);
+    
+    if (isNaN(slideId)) {
+        console.error('L\'ID du slide n\'est pas valide.');
+        return;
+    }
+    $('.carousel').carousel(slideId);
+    slideTo(slideId);
+}
+
+// Create point for data
+function addDate(date,id) {
+    let idItem = document.querySelector(".carousel-indicators button[data-featureid='"+ id +"']");
+    let slideItem = idItem.getAttribute("data-bs-slide-to");
+    div = document.querySelector("#customTimeline .timeline__year[data-years='" + date + "'] .timelineItems_list");
+    div.innerHTML += `<div class='timeline__item time__{{pers_code}}' id='timelineItem__{{id}}'><a type='button' onclick="$('.carousel').carousel(${slideItem});slideTo(${slideItem});"><div class='timeline__itemPoint' ><div class='timeline__itemHover'>{{name}}</div></div></a></div>`;
+};  
+
+// Create bar for corpus
+function addPeriode(start,end,id) {
+    const timelineWidth = document.querySelector("#customTimeline").offsetWidth;
+    let yearsPeriode = end - start +1;
+    let sizeBar= (timelineWidth/timelineConfig.numberYears) * yearsPeriode;
+    let sizeBarPerc = sizeBar*100/timelineWidth;
+    let idItem = document.querySelector(".carousel-indicators button[data-featureid='"+ id +"']");
+    let slideItem = idItem.getAttribute("data-bs-slide-to");
+    div = document.querySelector("#customTimeline .timeline__year[data-years='" + start + "'] .timelineItems_list");
+    div.innerHTML += `<div class='timeline__item time__{{pers_code}}' id='timelineItem__{{id}}'><a type='button' onclick="$('.carousel').carousel(${slideItem});slideTo(${slideItem});"><div class='timeline__itemPeriode' style='width:${sizeBarPerc}%!important'><div class='timeline__itemHover'>{{name}}</div></div></a></div>`;        
+};
+
+{{#date_end}}
+    addPeriode({{date_start}},{{date_end}},{{id}});
+{{/date_end}}
+{{^date_end}}
+    {{#date_start}}
+        addDate({{date_start}},{{id}});
+    {{/date_start}}
+{{/date_end}}
+
+
+function applyCustomStyles(itemType, itemCorpus) {
+  const styles = {
+    "none": {
+      fill: { color: "rgba(134,235,213,0)" },
+      stroke: { color: "rgba(134,235,213,0)", width: 1 }
+    },
+    "p_01": {
+      fill: { color: "rgba(0,47,67,0)" },
+      stroke: { color: "rgba(0,47,67,0)", width: 1 },
+      icon: { src: "stories/greenseas_ch3/img/icon_map_p01.svg", scale: 0.35 }
+    },
+    "p_02": {
+      fill: { color: "rgba(0,47,67,0)" },
+      stroke: { color: "rgba(0,47,67,0)", width: 1 },
+      icon: { src: "stories/greenseas_ch3/img/icon_map_p02.svg", scale: 0.35 }
+    },
+    "p_03": {
+      fill: { color: "rgba(0,47,67,0)" },
+      stroke: { color: "rgba(0,47,67,0)", width: 1 },
+      icon: { src: "stories/greenseas_ch3/img/icon_map_p03.svg", scale: 0.35 }
+    },
+    "p_04": {
+      fill: { color: "rgba(0,47,67,0)" },
+      stroke: { color: "rgba(0,47,67,0)", width: 1 },
+      icon: { src: "stories/greenseas_ch3/img/icon_map_p04.svg", scale: 0.35 }
+    },
+    "p_05": {
+      fill: { color: "rgba(0,47,67,0)" },
+      stroke: { color: "rgba(0,47,67,0)", width: 1 },
+      icon: { src: "stories/greenseas_ch3/img/icon_map_p05.svg", scale: 0.35 }
+    }
+  };
+
+  ks.mapStorie().getAllLayers().forEach(layer => {
+    if (layer.get('name') === 'data_app') {
+      const source = layer.getSource();
+
+      // Vérification si la source est valide avant de l'utiliser
+      if (!source) {
+        console.warn('Source de la couche non valide');
+        return; // Stoppe l'exécution si la source est null
+      }
+
+      // Si itemType est 'intro', on applique le style à toutes les features
+      if (itemType === "intro") {
+        layer.setStyle((feature) => {
+          const persMap = feature.get('pers_code');
+
+          // Applique le style correspondant à chaque 'pers_code'
+          const style = styles[persMap] || styles["none"]; // Utilise 'none' si le 'pers_code' n'existe pas
+
+          if (style.icon) {
+            return new ol.style.Style({
+              fill: new ol.style.Fill({ color: style.fill.color }),
+              stroke: new ol.style.Stroke({ color: style.stroke.color, width: style.stroke.width }),
+              image: new ol.style.Icon({
+                src: style.icon.src,
+                scale: style.icon.scale
+              })
+            });
+          }
+
+          return new ol.style.Style({
+            fill: new ol.style.Fill({ color: style.fill.color }),
+            stroke: new ol.style.Stroke({ color: style.stroke.color, width: style.stroke.width })
+          });
+        });
+      } else {
+        // Applique le style uniquement si 'pers_code' correspond à 'itemCorpus'
+        layer.setStyle((feature) => {
+          const persMap = feature.get('pers_code');
+
+          // Si 'itemCorpus' est 'none' ou que 'pers_code' ne correspond pas, applique un style transparent
+          if (itemCorpus === "none" || persMap !== itemCorpus) {
+            return new ol.style.Style({
+              fill: new ol.style.Fill({ color: styles["none"].fill.color }),
+              stroke: new ol.style.Stroke({ color: styles["none"].stroke.color, width: styles["none"].stroke.width })
+            });
+          }
+
+          // Applique le style correspondant à 'pers_code' si 'itemCorpus' correspond
+          const style = styles[persMap] || styles["none"]; // Fallback vers "none" si le code n'existe pas
+
+          if (style.icon) {
+            return new ol.style.Style({
+              fill: new ol.style.Fill({ color: style.fill.color }),
+              stroke: new ol.style.Stroke({ color: style.stroke.color, width: style.stroke.width }),
+              image: new ol.style.Icon({
+                src: style.icon.src,
+                scale: style.icon.scale
+              })
+            });
+          }
+
+          return new ol.style.Style({
+            fill: new ol.style.Fill({ color: style.fill.color }),
+            stroke: new ol.style.Stroke({ color: style.stroke.color, width: style.stroke.width })
+          });
+        });
+      }
+    }
+  });
+}
+
+// Event change item 
+$('.carousel').on('slide.bs.carousel', function (e) {
+    // Type of item
+    let currentItemType = e.relatedTarget.firstChild.nextSibling.getAttribute("item-type");
+    let currentItemCorpus = e.relatedTarget.firstChild.nextSibling.getAttribute("item-corpus");
+    let timeline = document.querySelector("#customTimeline");
+    timeline.setAttribute("item-type", currentItemType);
+    timeline.setAttribute("item-corpus", currentItemCorpus);
+    // Filter map 
+    applyCustomStyles(currentItemType,currentItemCorpus);
+    // Add active class to item timeline
+    let timelineActiv = document.querySelector(".timeline__active");
+    if(timelineActiv){
+        timelineActiv.classList.remove("timeline__active");
+    }    
+    if(currentItemType != "intro"){
+        let currentItemId = e.relatedTarget.attributes["data-featureid"].value;
+        let currentItemDate = document.querySelector("#timelineItem__"+ currentItemId +"")
+        currentItemDate.classList.add("timeline__active");
+    }    
+});
+
+// Get data for each corpus 
+if("{{type}}" === "pers"){
+  var urlCsvData = "stories/greenseas_ch3/greenseas_info_ch3.csv";
+  Papa.parse(urlCsvData, {
+    header: true,
+    download: true,
+    complete: function(results) {       
+      const corpus_id = "{{pers_code}}"
+      const filteredData = results.data.filter(item => item.id_personne === corpus_id && item.niveau === "3");
+      const fdiv = document.getElementById('corpusDataList_{{pers_code}}');
+      filteredData.forEach(item => {  // Ajouter le titre à la div
+        let cardFeature = `
+        <a type="button" onclick="goToSlide(${item.id_story});" class="corpus__card">
+                <div class="corpus__cardTitle">${item.titre}</div>
+            </a>
+        `;
+        fdiv.insertAdjacentHTML( 'beforeend', cardFeature );  // Ajouter la div au conteneur parent
+      });
+    },
+  });      
+}
+</script>
+{{/id}}

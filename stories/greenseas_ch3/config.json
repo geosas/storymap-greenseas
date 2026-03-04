@@ -1,0 +1,133 @@
+{
+  "theme": {
+    "color" : "#002f43",
+    "css":"greenseas_ch3.css"
+  },
+  "tooltip": {
+    "fields": [
+      "nom","date_creation"
+    ],
+    "template":"{{name}}"
+  },
+  "map": {
+		"center": [-227028,6182514],
+		"zoom": 15,
+    "width": "100%",
+    "overview": false,
+    "url": "http://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+    "animation": true
+  },
+  "data": {
+    "template": {
+      "name": "carousel",
+      "size": "50%"
+    },
+    "url": "stories/greenseas_ch3/greenseas_ch3.geojson",
+    "orderby": "id",
+    "fields": [
+      {
+        "name": "id"
+      }
+    ],
+    "id": "id",
+    "tpl": "stories/greenseas_ch3/greenseas_ch3.mst",
+    "analyse": {
+      "type": "categories",
+      "field": "pers_map",
+      "values": ["none", "p_01","p_02","p_03","p_04","p_05"],
+      "styles": [
+      {
+        "fill": {
+          "color": "rgba(134,235,213,0)"
+        },
+        "stroke": {
+          "color": "rgba(134,235,213,0)",
+          "width": 1
+        }
+      }, 
+      {
+        "fill": {
+          "color": "rgba(0,47,67,0)"
+        },
+        "stroke": {
+          "color": "rgba(0,47,67,0)",
+          "width": 1
+        }, 
+        "icon": {
+          "src" : "stories/greenseas_ch3/img/icon_map_p01.svg",
+          "scale" : 0.35
+        }
+      }, 
+      {
+        "fill": {
+          "color": "rgba(0,47,67,0)"
+        },
+        "stroke": {
+          "color": "rgba(0,47,67,0)",
+          "width": 1
+        }, 
+        "icon": {
+          "src" : "stories/greenseas_ch3/img/icon_map_p02.svg",
+          "scale" : 0.35
+        }
+      }, 
+      {
+        "fill": {
+          "color": "rgba(0,47,67,0)"
+        },
+        "stroke": {
+          "color": "rgba(0,47,67,0)",
+          "width": 1
+        }, 
+        "icon": {
+          "src" : "stories/greenseas_ch3/img/icon_map_p03.svg",
+          "scale" : 0.35
+        }
+      }, 
+      {
+        "fill": {
+          "color": "rgba(0,47,67,0)"
+        },
+        "stroke": {
+          "color": "rgba(0,47,67,0)",
+          "width": 1
+        }, 
+        "icon": {
+          "src" : "stories/greenseas_ch3/img/icon_map_p04.svg",
+          "scale" : 0.35
+        }
+      }, 
+      {
+        "fill": {
+          "color": "rgba(0,47,67,0)"
+        },
+        "stroke": {
+          "color": "rgba(0,47,67,0)",
+          "width": 1
+        }, 
+        "icon": {
+          "src" : "stories/greenseas_ch3/img/icon_map_p05.svg",
+          "scale" : 0.35
+        }
+      }
+    ]
+    },
+    "hightlightstyle": {
+      "fill": {
+        "color": "rgba(37,56,72,0)"
+      },
+      "icon": {
+        "src" : "stories/greenseas_ch3/img/icon_mapSelect.svg",
+        "scale" : 0.4
+      },
+      "stroke": {
+        "color": "rgba(37,56,72,0)",
+        "width": 2
+      }
+    }
+  },
+  "extradata": {
+    "url": "greenseas_info_ch3.csv",
+    "linkfield": "id_story"
+  }
+}

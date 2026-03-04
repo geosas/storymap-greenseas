@@ -1,0 +1,466 @@
+{
+  "type": "FeatureCollection",
+  "name": "data",
+  "crs": { 
+    "type": "name", 
+    "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } 
+  },
+  "features": [    
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1,
+        "name": "Introduction",
+        "type": "intro",
+        "pers": "all",
+        "pers_code": "all",
+        "pers_map": "none",
+        "date_start": null,
+        "date_end": null
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiLineString",
+            "coordinates": [
+              [
+                [
+                  -567739.0595329048,
+                  6275271.581878413
+                ],
+                [
+                  -101332.39937872638,
+                  6268132.704427074
+                ],
+                [
+                  -120369.40591563156,
+                  5978611.563344974
+                ],
+                [
+                  -575671.1455899486,
+                  6007167.073150331
+                ]
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "name": "Gestionnaires",
+        "type": "pers",
+        "pers": "Gestionnaires",
+        "pers_code": "p_01",
+        "pers_map": "none",
+        "date_start": "1970",
+        "date_end": "2026"
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiLineString",
+            "coordinates": [
+              [
+                [
+                  -489013.1054167448,
+                  6190993.167522321
+                ],
+                [
+                  -493375.7527481189,
+                  6064079.79060962
+                ],
+                [
+                  -184421.0008262609,
+                  6019660.108690174
+                ],
+                [
+                  -168160.22440932103,
+                  6141417.629665798
+                ],
+                [
+                  -486633.4795996316,
+                  6192579.58473373
+                ],
+                [
+                  -486633.4795996316,
+                  6192579.58473373
+                ]
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 20,
+        "name": "Scientifiques",
+        "type": "pers",
+        "pers": "Scientifiques",
+        "pers_code": "p_02",
+        "pers_map": "none",
+        "date_start": "1974",
+        "date_end": "2026"
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiLineString",
+            "coordinates": [
+              [
+                [
+                  -489013.1054167448,
+                  6190993.167522321
+                ],
+                [
+                  -493375.7527481189,
+                  6064079.79060962
+                ],
+                [
+                  -184421.0008262609,
+                  6019660.108690174
+                ],
+                [
+                  -168160.22440932103,
+                  6141417.629665798
+                ],
+                [
+                  -486633.4795996316,
+                  6192579.58473373
+                ],
+                [
+                  -486633.4795996316,
+                  6192579.58473373
+                ]
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 30,
+        "name": "Journalistes ",
+        "type": "pers",
+        "pers": "Journalistes ",
+        "pers_code": "p_03",
+        "pers_map": "none",
+        "date_start": "1969",
+        "date_end": "2026"
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiLineString",
+            "coordinates": [
+              [
+                [
+                  -489013.1054167448,
+                  6190993.167522321
+                ],
+                [
+                  -493375.7527481189,
+                  6064079.79060962
+                ],
+                [
+                  -184421.0008262609,
+                  6019660.108690174
+                ],
+                [
+                  -168160.22440932103,
+                  6141417.629665798
+                ],
+                [
+                  -486633.4795996316,
+                  6192579.58473373
+                ],
+                [
+                  -486633.4795996316,
+                  6192579.58473373
+                ]
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 40,
+        "name": "Militants",
+        "type": "pers",
+        "pers": "Militants",
+        "pers_code": "p_04",
+        "pers_map": "none",
+        "date_start": "1942",
+        "date_end": "2026"
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiLineString",
+            "coordinates": [
+              [
+                [
+                  -489013.1054167448,
+                  6190993.167522321
+                ],
+                [
+                  -493375.7527481189,
+                  6064079.79060962
+                ],
+                [
+                  -184421.0008262609,
+                  6019660.108690174
+                ],
+                [
+                  -168160.22440932103,
+                  6141417.629665798
+                ],
+                [
+                  -486633.4795996316,
+                  6192579.58473373
+                ],
+                [
+                  -486633.4795996316,
+                  6192579.58473373
+                ]
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 50,
+        "name": "Habitants",
+        "type": "pers",
+        "pers": "Habitants",
+        "pers_code": "p_05",
+        "pers_map": "none",
+        "date_start": "1989",
+        "date_end": "2026"
+      },
+      "geometry": {
+        "type": "GeometryCollection",
+        "geometries": [
+          {
+            "type": "MultiLineString",
+            "coordinates": [
+              [
+                [
+                  -489013.1054167448,
+                  6190993.167522321
+                ],
+                [
+                  -493375.7527481189,
+                  6064079.79060962
+                ],
+                [
+                  -184421.0008262609,
+                  6019660.108690174
+                ],
+                [
+                  -168160.22440932103,
+                  6141417.629665798
+                ],
+                [
+                  -486633.4795996316,
+                  6192579.58473373
+                ],
+                [
+                  -486633.4795996316,
+                  6192579.58473373
+                ]
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 11,
+        "name": "Jean – Gestionnaire 1 ",
+        "type": "data",
+        "pers": "Gestionnaire",
+        "pers_code": "p_01",
+        "pers_map": "p_01",
+        "date_start": "1985",
+        "date_end": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-288099.86, 6186511.17]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 12,
+        "name": "Sarah – Gestionnaire 2 ",
+        "type": "data",
+        "pers": "Gestionnaire",
+        "pers_code": "p_01",
+        "pers_map": "p_01",
+        "date_start": "1970",
+        "date_end": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-414890.26, 6166225.59]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 21,
+        "name": "Edouard – Scientifique 1",
+        "type": "data",
+        "pers": "Scientifique",
+        "pers_code": "p_02",
+        "pers_map": "p_02",
+        "date_start": "1986",
+        "date_end": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-467639.49, 6123622.74]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 22,
+        "name": "Justine – Scientifique 2",
+        "type": "data",
+        "pers": "Scientifique",
+        "pers_code": "p_02",
+        "pers_map": "p_02",
+        "date_start": "1974",
+        "date_end": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-461239.49, 6145322.74]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 31,
+        "name": "Marie – Journaliste 1",
+        "type": "data",
+        "pers": "Journaliste",
+        "pers_code": "p_03",
+        "pers_map": "p_03",
+        "date_start": "2003",
+        "date_end": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-430253.47, 6089657.68]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 32,
+        "name": "Julien – Journaliste 2",
+        "type": "data",
+        "pers": "Journaliste",
+        "pers_code": "p_03",
+        "pers_map": "p_03",
+        "date_start": "2007",
+        "date_end": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-434953.47, 6179657.68]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 41,
+        "name": "Pierre – Militant 1",
+        "type": "data",
+        "pers": "Journaliste",
+        "pers_code": "p_04",
+        "pers_map": "p_04",
+        "date_start": "2003",
+        "date_end": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-513475.85, 6201260.68]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 42,
+        "name": "Catherine – Militant 2",
+        "type": "data",
+        "pers": "Journaliste",
+        "pers_code": "p_04",
+        "pers_map": "p_04",
+        "date_start": "1997",
+        "date_end": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-319679.91, 6041370.31]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 51,
+        "name": "Camille – Habitante 1",
+        "type": "data",
+        "pers": "Habitant",
+        "pers_code": "p_05",
+        "pers_map": "p_05",
+        "date_start": "2003",
+        "date_end": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-324319.91, 6041370.31]
+      }
+    }, 
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 52,
+        "name": "Bernard – Habitant 2",
+        "type": "data",
+        "pers": "Habitant",
+        "pers_code": "p_05",
+        "pers_map": "p_05",
+        "date_start": "1988",
+        "date_end": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-322437.91, 6091370.31]
+      }
+    }
+  ]
+}
