@@ -1,7 +1,7 @@
 {
   "theme": {
     "color" : "#002f43",
-    "css":"greenseas.css"
+    "css":"greenseas_ch2.css"
   },
   "tooltip": {
     "fields": [
