@@ -66,9 +66,21 @@
                 <div><img src="stories/greenseas_ch3/img/icon_corpus_p_05.svg"/></div>
                 <div class="corpus__cardTitle">Habitants</div>
             </a> 
+            <a type="button" onclick="goToSlide(60);" class="corpus__card card__dico" style="background-color:var(--color-p_06)">
+                <div></div>
+                <div class="corpus__cardTitle">Et dans le dico ?</div>
+            </a> 
         </div>
     </div>      
 </div>
+<style>
+.card__dico {
+  background-image: url("stories/greenseas_ch3/img/icon_dico.svg");
+  background-size: 190px;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+</style>
 
 <script>
 

@@ -10,6 +10,7 @@ body {
     --color-p_03: #6bb6b5;
     --color-p_04: #9ed2c3;
     --color-p_05: #539e98;
+    --color-p_06: #002f43;
     --opacity: 0.5;
 }
 
@@ -183,6 +184,13 @@ h1,h2{
     outline-color: color-mix(in srgb, var(--color-p_05) 50%, white);
 }
 
+.time__p_06 > a > *{
+    background-color: var(--color-p_06);
+}
+.time__p_06.timeline__active > a > *{
+    outline-color: color-mix(in srgb, var(--color-p_06) 50%, white);
+}
+
 .time__p_01 .timeline__itemPeriode {
     bottom: 20px;
 }
@@ -216,10 +224,15 @@ h1,h2{
 #customTimeline[item-corpus='p_05'] .timeline__item:not(.time__p_05){
     display:none;
 }
+#customTimeline[item-corpus='p_06'] .timeline__item:not(.time__p_06){
+    display:none;
+}
 
 /* Affichage condictionnel des dates selon le type de l'item */
 
-#customTimeline[item-type='intro'] .timeline__itemPoint {
+#customTimeline[item-type='intro'] .timeline__itemPeriode, 
+#customTimeline[item-type='pers'] .timeline__itemPeriode, 
+#customTimeline[item-type='data'] .timeline__itemPeriode {
     display:none;
 }
 
@@ -255,6 +268,10 @@ h1,h2{
 }
 .corpus_p_05 .item__badge {
     background-color: var(--color-p_05);
+    color:white;
+}
+.corpus_p_06 .item__badge {
+    background-color: var(--color-p_06);
     color:white;
 }
 
@@ -427,6 +444,14 @@ h1,h2{
 
 .corpus_dataList.p_05 .corpus__cardTitle{
     color: color-mix(in srgb, var(--color-p_05) 84%, black)!important;
+}
+
+.corpus_dataList.p_06 > .corpus__card{
+    background-color: color-mix(in srgb, var(--color-p_06) 20%, white);
+}
+
+.corpus_dataList.p_06 .corpus__cardTitle{
+    color: color-mix(in srgb, var(--color-p_06) 84%, black)!important;
 }
 
 /* Data corpus */

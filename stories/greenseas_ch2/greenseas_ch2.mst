@@ -101,15 +101,15 @@
                 <div><img src="stories/greenseas_ch2/img/icon_zoom_n_01.svg"/></div>
                 <div class="corpus__cardTitle">Résultats de l’analyse des enquêtes communales</div>
             </a>
-            <a type="button" onclick="goToSlide(20);" class="corpus__card" style="background-color:var(--color-n2)">
+            <a type="button" onclick="goToSlide(200);" class="corpus__card" style="background-color:var(--color-n2)">
                 <div><img src="stories/greenseas_ch2/img/icon_zoom_n_02.svg"/></div>
                 <div class="corpus__cardTitle">Zoom sur Hillion</div>
             </a>
-            <a type="button" onclick="goToSlide(30);" class="corpus__card" style="background-color:var(--color-n2)">
+            <a type="button" onclick="goToSlide(300);" class="corpus__card" style="background-color:var(--color-n2)">
                 <div><img src="stories/greenseas_ch2/img/icon_zoom_n_02.svg"/></div>
                 <div class="corpus__cardTitle">Zoom sur Baie de Douarnenez</div>
             </a>
-            <a type="button" onclick="goToSlide(40);" class="corpus__card" style="background-color:var(--color-n2)">
+            <a type="button" onclick="goToSlide(400);" class="corpus__card" style="background-color:var(--color-n2)">
                 <div><img src="stories/greenseas_ch2/img/icon_zoom_n_02.svg"/></div>
                 <div class="corpus__cardTitle">Zoom sur Baie de la Forêt</div>
             </a> 

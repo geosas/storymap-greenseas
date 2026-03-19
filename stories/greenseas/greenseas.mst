@@ -49,7 +49,7 @@
             </a>
         </div>
         {{/id_doc}}   
-        <p>{{{texte}}}</p>  
+        <div>{{{texte}}}</div>  
     </div> 
     <div class="template__corpus" style="background-color:var(--color-{{corpus_code}})">
         <div class="templateCorpus__header" >

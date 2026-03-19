@@ -77,7 +77,7 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 20,
+        "id": 200,
         "name": "Zoom sur Hillion",
         "type": "zoom",
         "zoom": "Zoom sur Hillion",
@@ -104,7 +104,7 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 30,
+        "id": 300,
         "name": "Zoom sur Baie de Douarnenez",
         "type": "zoom",
         "zoom": "Zoom sur Baie de Douarnenez",
@@ -131,7 +131,7 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 40,
+        "id": 400,
         "name": "Zoom sur Baie de la Forêt",
         "type": "zoom",
         "zoom": "Zoom sur Baie de la Forêt",
@@ -158,7 +158,7 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 21,
+        "id": 201,
         "name": "Exemple de document associé à Hillion – 21",
         "type": "data",
         "zoom": "Zoom sur Hillion",
@@ -175,7 +175,7 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 31,
+        "id": 301,
         "name": "Exemple de document associé à la Baie de Douarnenez – 31",
         "type": "data",
         "zoom": "Zoom sur Baie de Douarnenez",
@@ -193,7 +193,7 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 41,
+        "id": 401,
         "name": "Exemple de document associé à la Baie de la Forêt – 41",
         "type": "data",
         "zoom": "Zoom sur Baie de la Forêt",
