@@ -30,7 +30,7 @@
           </div>
         </div>  
         {{#id_img}}
-        <div class="tplData_img">
+        <div class="tplData_img my-3">
             <img src="stories/greenseas/corpus_doc/{{id_img}}" class="img-fluid" alt="{{name}}" id="image_{{id}}">
             <a class="img__btnOpen" target="_blank" href="stories/greenseas/corpus_doc/{{id_img}}" title="Ouvrir en plein écran">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 8.41421V12L5 12L5 5L12 5V7L8.41421 7L17 15.5858V12L19 12L19 19H12V17H15.5858L7 8.41421Z"></path></svg>
@@ -38,18 +38,18 @@
         </div>
         {{/id_img}} 
         {{#id_son}}
-        <div class="tplData_sound">
+        <div class="tplData_sound my-3">
           <audio controls src="stories/greenseas/corpus_doc/{{id_son}}" controls autoplay muted></audio>
         </div>
         {{/id_son}}  
         {{#id_doc}}
-        <div class="tplData_doc mt-3">
+        <div class="tplData_doc my-3">
             <a target="_blank" href="stories/greenseas/corpus_doc/{{id_doc}}" class="btn btn__doc">
               <span>Consulter le document</span> 
             </a>
         </div>
         {{/id_doc}}   
-        <div>{{{texte}}}</div>  
+        <div class="my-3">{{{texte}}}</div>  
     </div> 
     <div class="template__corpus" style="background-color:var(--color-{{corpus_code}})">
         <div class="templateCorpus__header" >
@@ -182,7 +182,7 @@ function addDate(date,id) {
     let idItem = document.querySelector(".carousel-indicators button[data-featureid='"+ id +"']");
     let slideItem = idItem.getAttribute("data-bs-slide-to");
     div = document.querySelector("#customTimeline .timeline__year[data-years='" + date + "'] .timelineItems_list");
-    div.innerHTML += `<div class='timeline__item time__{{corpus_code}}' id='timelineItem__{{id}}'><a type='button' onclick="$('.carousel').carousel(${slideItem});slideTo(${slideItem});"><div class='timeline__itemPoint' ><div class='timeline__itemHover'>{{name}}</div></div></a></div>`;
+    div.innerHTML += `<div class='timeline__item time__{{corpus_code}}' id='timelineItem__{{id}}'><a type='button' onclick="$('.carousel').carousel(${slideItem});slideTo(${slideItem});"><div class='timeline__itemPoint' ><div class='timeline__itemHover'>{{date_start}} - {{name}}</div></div></a></div>`;
 };  
 
 // Create bar for corpus
@@ -194,7 +194,7 @@ function addPeriode(start,end,id) {
     let idItem = document.querySelector(".carousel-indicators button[data-featureid='"+ id +"']");
     let slideItem = idItem.getAttribute("data-bs-slide-to");
     div = document.querySelector("#customTimeline .timeline__year[data-years='" + start + "'] .timelineItems_list");
-    div.innerHTML += `<div class='timeline__item time__{{corpus_code}}' id='timelineItem__{{id}}'><a type='button' onclick="$('.carousel').carousel(${slideItem});slideTo(${slideItem});"><div class='timeline__itemPeriode' style='width:${sizeBarPerc}%!important'><div class='timeline__itemHover'>{{name}}</div></div></a></div>`;        
+    div.innerHTML += `<div class='timeline__item time__{{corpus_code}}' id='timelineItem__{{id}}'><a type='button' onclick="$('.carousel').carousel(${slideItem});slideTo(${slideItem});"><div class='timeline__itemPeriode' style='width:${sizeBarPerc}%!important'><div class='timeline__itemHover'>{{date_start}} à {{date_end}} - {{name}}</div></div></a></div>`;        
 };
 
 {{#date_end}}
